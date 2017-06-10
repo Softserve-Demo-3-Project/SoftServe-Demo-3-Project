@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "name": "Gosho",
+      "password": "pass"
+    }
+  ],
+  "adverisments": [
+    {
+      "id": 1,
+      "author": "gosho",
+      "title": "Some title",
+      "description": "some description",
+      "picture": "some picture",
+      "location": "some location",
+      "contacts": "some contacts",
+      "prise": 33,
+      "type": "some type",
+      "authurRole": "some role"
+    },
+    {
+      "id": 2,
+      "author": "toncho",
+      "title": "some1 title",
+      "description": "some1 description",
+      "picture": "some1 picture",
+      "location": "some1 location",
+      "contacts": "some1 contacts",
+      "prise": 331,
+      "type": "some1 type",
+      "authurRole": "some1 role"
+    },
+    {
+      "id": 3,
+      "author": "ivan",
+      "title": "some2 title",
+      "description": "some2 description",
+      "picture": "some2 picture",
+      "location": "some2 location",
+      "contacts": "some2 contacts",
+      "prise": 332,
+      "type": "some2 type",
+      "authurRole": "some2 role"
+    },
+    {
+      "id": 4,
+      "author": "iva",
+      "title": "some3 title",
+      "description": "some3 description",
+      "picture": "some3 picture",
+      "location": "some3 location",
+      "contacts": "some3 contacts",
+      "prise": 333,
+      "type": "some3 type",
+      "authurRole": "some3 role"
+    }
+  ]
+}

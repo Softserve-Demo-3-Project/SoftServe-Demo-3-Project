@@ -12,7 +12,8 @@ export default function advertisementFactory() {
             this._prise = prise,
             this._type = type,
             this._authurRole = authurRole,
-            this._id = idGenerator.next();
+            this._id = 3
+            // this._id = idGenerator.next();
     }
 
     Advertisement.prototype.read = function () {
@@ -29,13 +30,12 @@ export default function advertisementFactory() {
         }
     }
 
-    Advertisement.create = function (data) {
+    function create(data) {
         // Optional
         if (data.authurRole !== 'admin') {
             return;
         }
 
-        // console.log(data);
         return new Advertisement(
             data.author,
             data.title,
@@ -99,6 +99,8 @@ export default function advertisementFactory() {
     //     )
     // }
 
-    return Advertisement
+    return {
+        create: create
+    }
 }
 

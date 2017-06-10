@@ -12,7 +12,7 @@ export default function homePageUtils() {
     };
 
     return {
-        idGenerator
+        idGenerator: idGenerator
     }
 
 }
