@@ -5,10 +5,6 @@ import ngRoute from 'angular-route';
 
 import 'angular/angular-csp.css';
 import './index.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
-
 
 // import demoModule from './demo/demoModule';
 
@@ -16,12 +12,15 @@ import homeModule from './home-page/homeModule';
 import loginModue from './login-page/loginModel';
 import registerModule from './register-page/registerModule';
 
+import 'angular-ui-bootstrap';
+
 angular
   .module('main', [
     ngRoute,
     homeModule,
     loginModue,
-    registerModule
+    registerModule,
+    'ui.bootstrap'
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
