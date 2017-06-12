@@ -1,6 +1,5 @@
 
 import angular from 'angular';
-// import uiRouter from '@uirouter/angularjs';
 import ngRoute from 'angular-route';
 
 import 'angular/angular-csp.css';
