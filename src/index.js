@@ -5,6 +5,10 @@ import ngRoute from 'angular-route';
 
 import 'angular/angular-csp.css';
 import './index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+
+
 
 // import demoModule from './demo/demoModule';
 
