@@ -1,4 +1,4 @@
-import { HomeController } from './HomeController.js';
+import  HomeController  from './HomeController.js';
 
 export default function homeDirective() {
     return {

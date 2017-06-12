@@ -20,6 +20,6 @@ export default class HomeController {
             prise: 22,
             type: 'some type',
             authurRole: 'admin'
-        }]
+        }];
     }
 }
