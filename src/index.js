@@ -12,7 +12,9 @@ import homeModule from './home-page/homeModule';
 import loginModue from './login-page/loginModel';
 import registerModule from './register-page/registerModule';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-ui-bootstrap';
+
 
 angular
   .module('main', [
