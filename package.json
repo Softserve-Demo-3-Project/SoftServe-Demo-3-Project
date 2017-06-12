@@ -20,7 +20,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@uirouter/angularjs": "latest",
     "angular": "^1.6.4",
     "angular-route": "^1.6.4",
     "angular-ui-bootstrap": "^2.5.0"
