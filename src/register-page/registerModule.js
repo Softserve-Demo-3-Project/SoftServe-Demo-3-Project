@@ -1,9 +1,9 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
 
-import './register-page.scss';
+import './reg-form-css.css';
 
-import registerPageController from './registerPageController';
+import registerPageController from './regPageController';
 
 export default angular
     .module('register.module', ['ngRoute'])
@@ -11,7 +11,7 @@ export default angular
         $routeProvider
             .when('/register', {
                 template: require('./reg-form.html'),
-                controller: registerPageController
+                controller: regPageController
             })
             .otherwise({
                 redirectTo: '/home'
