@@ -20,7 +20,7 @@ angular
   .module('main', [
     ngRoute,
     homeModule,
-    loginModue,
+    loginModel,
     registerModule,
     'ui.bootstrap'
   ])
