@@ -9,7 +9,7 @@ import './index.scss';
 
 import homeModule from './home-page/homeModule';
 import loginModue from './login-page/loginModel';
-import registerModule from './register-page/registerModule';
+
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-ui-bootstrap';
@@ -20,7 +20,6 @@ angular
     ngRoute,
     homeModule,
     loginModue,
-    registerModule,
     'ui.bootstrap'
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
