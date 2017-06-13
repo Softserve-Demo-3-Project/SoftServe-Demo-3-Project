@@ -3,7 +3,7 @@ import ngRoute from 'angular-route';
 
 import './reg-form-css.css';
 
-import registerPageController from './regPageController';
+import regPageController from './regPageController';
 
 export default angular
     .module('register.module', ['ngRoute'])
