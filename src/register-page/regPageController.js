@@ -1,4 +1,4 @@
-var userRegForm = angular.module('RegFormModule', []);
+var userRegForm = angular.module('RegFormModule', ['jcs-autoValidate']);
 
 userRegForm.run(function(defaultErrorMessageResolver) {
     defaultErrorMessageResolver.getErrorMessages().then(function(errorMessages) {
