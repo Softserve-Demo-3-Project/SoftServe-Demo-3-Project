@@ -11,7 +11,7 @@ export default angular
         $routeProvider
             .when('/register', {
                 template: require('./reg-form.html'),
-                controller: registerPageController
+                controller: regPageController
             })
             .otherwise({
                 redirectTo: '/home'
