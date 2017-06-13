@@ -8,7 +8,7 @@ import './index.scss';
 // import demoModule from './demo/demoModule';
 
 import homeModule from './home-page/homeModule';
-import loginModue from './login-page/loginModel';
+import loginModel from './login-page/loginModel';
 import registerModule from './register-page/registerModule';
 
 
