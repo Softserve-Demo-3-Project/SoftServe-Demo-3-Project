@@ -1,29 +1,23 @@
-
 import angular from 'angular';
-import ngRoute from 'angular-route';
+import router from 'angular-route';
 
+// Models
+import homeDirective from './home-page/homeDirective';
+import registerDirective from './register-page/registerDirective';
+import loginDirective from './login-page/loginDirective';
+
+// Common
+import { AdsService } from './core/services/adsService';
+import navigationDirective from './navigation/navigationDirective';
+
+
+import 'bootstrap/dist/css/bootstrap.css';
 import 'angular/angular-csp.css';
 import './index.scss';
 
 // import demoModule from './demo/demoModule';
 
-import homeModule from './home-page/homeModule';
-import loginModel from './login-page/loginModel';
-import registerModule from './register-page/registerModule';
-
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'angular-ui-bootstrap';
-
-
-angular
-  .module('main', [
-    ngRoute,
-    homeModule,
-    loginModel,
-    registerModule,
-    'ui.bootstrap'
-  ])
+angular.module('main', ['ngRoute'])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
     // Remove "!" from url
@@ -31,44 +25,27 @@ angular
 
     // Remove "#" from url ( may have some problems with server url and SEO )
     // $locationProvider.html5Mode(true);
+
+    $routeProvider
+      .when('/', {
+        template: '<home-module></home-module>',
+      })
+      .when('/login', {
+        template: '<login-module></login-module>'
+      })
+      .when('/register', {
+        template: '<register-module></ register-module>'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
   }])
+  .directive('homeModule', homeDirective)
+  .directive('loginModule', loginDirective)
+  .directive('registerModule', registerDirective)
+  .directive('navigation', navigationDirective)
+  .service('AdsService', AdsService)
+  .name;
 
 angular.bootstrap(document.documentElement, ['main']);
-
-
-
-// import angular from 'angular';
-// import router from 'angular-route';
-
-// import homePageController from './home-page/homePageController'
-
-// import 'angular/angular-csp.css';
-// import './index.scss';
-
-// // import demoModule from './demo/demoModule';
-
-// angular.module('main', ['ngRoute'])
-//   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-
-//     // Remove "!" from url
-//     $locationProvider.hashPrefix('');
-
-//     // Remove "#" from url ( may have some problems with server url and SEO )
-//     // $locationProvider.html5Mode(true);
-
-//     $routeProvider
-//       .when('/home', {
-//         template: require('./home-page/home-page.html'),
-//         controller: homePageController
-//       })
-//       .when('/login', {
-//         template: '<demo-welcome>Gosho</demo-welcome>'
-//       })
-//       .when('/register', {
-//         template: '<demo-welcome>Gosho</demo-welcome>'
-//       })
-//       .otherwise({ redirectTo: '/home' });
-//   }])
-
-// angular.bootstrap(document.documentElement, ['main']);
 
