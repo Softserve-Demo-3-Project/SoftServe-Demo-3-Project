@@ -5,11 +5,11 @@ import router from 'angular-route';
 import homeDirective from './home-page/homeDirective';
 import registerDirective from './register-page/registerDirective';
 import loginDirective from './login-page/loginDirective';
+import publishDirective from './publish-page/publishDirective';
 
 // Common
 import { AdsService } from './core/services/adsService';
-import navigationDirective from './navigation/navigationDirective';
-
+import navigationDirective from './core/directive/navigation/navigationDirective';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular/angular-csp.css';
@@ -36,6 +36,9 @@ angular.module('main', ['ngRoute'])
       .when('/register', {
         template: '<register-module></ register-module>'
       })
+      .when('/publish', {
+        template: '<publish-module></publish-module>'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -43,6 +46,7 @@ angular.module('main', ['ngRoute'])
   .directive('homeModule', homeDirective)
   .directive('loginModule', loginDirective)
   .directive('registerModule', registerDirective)
+  .directive('publishModule', publishDirective)
   .directive('navigation', navigationDirective)
   .service('AdsService', AdsService)
   .name;
