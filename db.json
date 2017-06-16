@@ -1,38 +1,3 @@
-
-// Example usage
-
-//  User route GET
-//==============================================================================
-// GET http://localhost:3000/users - all users
-// GET http://localhost:3000/users?name=Gosho&password=passHash - current user
-
-// Ads route GET
-//==============================================================================
-// GET http://localhost:3000/ads - all ads
-// GET http://localhost:3000/ads?id=3 - current ads
-
-// Routes POST 
-//==============================================================================
-// POST http://localhost:3000/users
-// POST http://localhost:3000/ads
-
-// Example body:
-// {
-//   "id": "new id,
-//   "author": "gosho1",
-//   "title": "some1 title",
-//   "dateOfPublish": "date",
-//   "description": "some1 description",
-//   "guests": 3,
-//   "bed": 2,
-//   "picture": "../playground/images/noimg.png",
-//   "location": "some1 location",
-//   "contacts": "some1 contacts",
-//   "prise": 11,
-//   "type": "some1 type",
-//   "book": {}
-// }
-
 {
   "users": [
     {
