@@ -9,6 +9,7 @@ import publishDirective from './publish-page/publishDirective';
 
 // Common
 import { AdsService } from './core/services/adsService';
+import { UserService } from './core/services/userService';
 import navigationDirective from './core/directive/navigation/navigationDirective';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -49,6 +50,7 @@ angular.module('main', ['ngRoute'])
   .directive('publishModule', publishDirective)
   .directive('navigation', navigationDirective)
   .service('AdsService', AdsService)
+  .service('userService', UserService)
   .name;
 
 angular.bootstrap(document.documentElement, ['main']);
