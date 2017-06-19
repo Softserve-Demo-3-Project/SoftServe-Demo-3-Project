@@ -1,6 +1,5 @@
 
 export default class LoginController {
-	'ngInject';
     constructor(userService, authenticationService, $location){
     	this.userService = userService;
     	this.authenticationService = authenticationService;
