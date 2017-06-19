@@ -1,5 +1,6 @@
 import angular from 'angular';
 import router from 'angular-route';
+import ngStrap from 'angular-strap';
 // import uiRouter from 'angular-ui-router';
 
 // Models
@@ -32,7 +33,8 @@ export default angular
     homeModule,
     loginModule,
     registerModule,
-    publishModule
+    publishModule,
+    ngStrap
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
@@ -48,9 +50,7 @@ export default angular
       //   controller: 'testModuleController'
       // })
       .when('/', {
-        template: require('./home-page/homeTemplate.html'),
-        controller: 'HomeController',
-        controllerAs: 'home'
+        template: '<home-page></home-page>',
       })
       .when('/login', {
         template: require('./login-page/loginTemplate.html'),

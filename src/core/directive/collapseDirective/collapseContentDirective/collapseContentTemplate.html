@@ -1,0 +1,17 @@
+<div class="panel panel-default" data-startCollapsed="false">
+    <div class="panel-heading" role="tab">
+        <h4 class="panel-title" bs-collapse-toggle animation>
+            <a ng-hide="editing" style="cursor: pointer;">{{ header }}</a>
+            <div ng-show="editing" class="input-group">
+                <input ng-model="header" type="text" class="form-control" />
+            </div>
+            <button ng-click="editing = !editing" class="btn btn-primary">{{ editing ? 'Save' : 'Edit' }}</button>
+        </h4>
+    </div>
+    <div class="panel-collapse" role="tabpanel" bs-collapse-target animation>
+        <div class="panel-body">
+            <collapse-body ng-hide="editing" body="body"></collapse-body>
+            <edit-field ng-show="editing" body="body"></edit-field>
+        </div>
+    </div>
+</div>
