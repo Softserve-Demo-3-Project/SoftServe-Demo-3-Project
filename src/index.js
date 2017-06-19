@@ -1,18 +1,23 @@
 import angular from 'angular';
 import router from 'angular-route';
-import ngCookies from 'angular-cookies';
+// import uiRouter from 'angular-ui-router';
 
 // Models
-import homeDirective from './home-page/homeDirective';
-import registerDirective from './register-page/registerDirective';
-import loginDirective from './login-page/loginDirective';
-import publishDirective from './publish-page/publishDirective';
+import homeModule from './home-page/homeModule';
+import loginModule from './login-page/loginModule';
+import registerModule from './register-page/registerModule';
+import publishModule from './publish-page/publishModule';
+
+
+// import homeDirective from './home-page/homeDirective';
+// import registerDirective from './register-page/registerDirective';
+// import loginDirective from './login-page/loginDirective';
+// import publishDirective from './publish-page/publishDirective';
 
 // Common
-import { AdsService } from './core/services/adsService';
-import { UserService } from './core/services/user.service';
-import { AuthenticationService } from './core/services/authentication.service';
 import navigationDirective from './core/directive/navigation/navigationDirective';
+
+import testModule from './testModule/testModuleIndex';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular/angular-csp.css';
@@ -20,7 +25,15 @@ import './index.scss';
 
 // import demoModule from './demo/demoModule';
 
-angular.module('main', ['ngRoute', 'ngCookies'])
+export default angular
+  .module('main', [
+    router,
+    // testModule,
+    homeModule,
+    loginModule,
+    registerModule,
+    publishModule
+  ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
     // Remove "!" from url
@@ -30,51 +43,64 @@ angular.module('main', ['ngRoute', 'ngCookies'])
     // $locationProvider.html5Mode(true);
 
     $routeProvider
+      // .when('/test', {
+      //   template: require('./testModule/testModule.html'),
+      //   controller: 'testModuleController'
+      // })
       .when('/', {
-        template: '<home-module></home-module>',
+        template: require('./home-page/homeTemplate.html'),
+        controller: 'HomeController',
+        controllerAs: 'home'
       })
       .when('/login', {
-        template: '<login-module></login-module>'
+        template: require('./login-page/loginTemplate.html'),
+        controller: 'LoginController',
+        controllerAs: 'login'
       })
       .when('/register', {
-        template: '<register-module></ register-module>'
+        template: require('./register-page/registerTemplate.html'),
+        controller: 'RegisterController',
+        controllerAs: 'reg'
       })
       .when('/publish', {
-        template: '<publish-module></publish-module>'
+        template: require('./publish-page/publishTemplate.html'),
+        controller: 'PublishController',
+        controllerAs: 'publish'
       })
       .otherwise({
         redirectTo: '/'
       });
   }])
-  .directive('homeModule', homeDirective)
-  .directive('loginModule', loginDirective)
-  .directive('registerModule', registerDirective)
-  .directive('publishModule', publishDirective)
   .directive('navigation', navigationDirective)
-  .service('AdsService', AdsService)
-  .service('userService', UserService)
-  .service('authenticationService', AuthenticationService)
-  .run(['$rootScope', '$location', '$cookies', '$http',
-    function($rootScope, $location, $cookies, $http) {
-      // keep user logged in after page refresh
-      $rootScope.globals = $cookies.getObject('globals') || {};
-      if ($rootScope.globals.currentUser) {
-          $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-      }
-
-      $rootScope.$on('$locationChangeStart', function (event, next, current) {
-          // redirect to login page if not logged in and trying to access a restricted page
-          let pages = ['/login', '/register'];
-          //let restrictedPage = pages.indexOf($location.path()) === -1;
-          //TODO add restriction conditions for guests
-          let restrictedPage = false; // no restrictions
-          let loggedIn = $rootScope.globals.currentUser;
-          if (restrictedPage && !loggedIn) {
-              $location.path('/login');
-          }
-      });
-    }])
-  .name;
 
 angular.bootstrap(document.documentElement, ['main']);
+
+
+    //   $routeProvider
+    //     .when('/', {
+    //       template: '<home-module></home-module>',
+    //     })
+    //     .when('/login', {
+    //       template: '<login-module></login-module>'
+    //     })
+    //     .when('/register', {
+    //       template: '<register-module></ register-module>'
+    //     })
+    //     .when('/publish', {
+    //       template: '<publish-module></publish-module>'
+    //     })
+    //     .otherwise({
+    //       redirectTo: '/'
+    //     });
+    // }])
+    // .directive('homeModule', homeDirective)
+    // .directive('loginModule', loginDirective)
+    // .directive('registerModule', registerDirective)
+    // .directive('publishModule', publishDirective)
+    // .directive('navigation', navigationDirective)
+    // .service('AdsService', AdsService)
+    // .name;
+
+
+
 

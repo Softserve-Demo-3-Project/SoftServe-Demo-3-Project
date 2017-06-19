@@ -1,5 +1,7 @@
 export class AdsService {
     constructor($http){
+    'ngInject';
+        
         this.$http = $http;
     }
 
