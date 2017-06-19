@@ -1,0 +1,24 @@
+<div class="container">
+  <form class="form-signin" ng-submit="login.submit()">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="username" class="sr-only">Username</label>
+    <input type="text" id="username" class="form-control" placeholder="Username" required autofocus ng-model="login.username">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required ng-model="login.password">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="login.rememberMe"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+  </form>
+
+  <div ng-if="login.hasFailed" class="alert alert-danger">
+    <strong>Error!</strong> Username or password does not exist
+  </div>
+
+  <div ng-if="login.hasLoggedIn" class="alert alert-success">
+    <strong>Congratz!</strong> You have logged in successfully
+  </div>
+
+</div>

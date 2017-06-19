@@ -1,6 +1,7 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngStrap from 'angular-strap';
+import ngCookies from 'angular-cookies';
 
 import 'bootstrap/dist/css/bootstrap.css';
 // import 'angular/angular-csp.css';
@@ -9,16 +10,19 @@ import './index.scss';
 // import demoModule from './demo/demoModule';
 
 import homeModule from './home-page/homeModule';
-import loginModule from './login-page/loginModule';
+//import loginModule from './login-page/loginModule';
 import registerModule from './register-page/registerModule';
+import navigationDirective from './core/directive/navigation/navigationDirective';
+import { UserService } from './core/services/user.service';
+import { AuthenticationService } from './core/services/authentication.service';
 
 angular
   .module('main', [
     ngRoute,
     homeModule,
-    loginModule,
     registerModule,
-    ngStrap
+    ngStrap,
+    ngCookies
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
@@ -33,6 +37,7 @@ angular
         redirectTo: '/home'
       });
   }])
+  .directive("navigation", navigationDirective)
 
 angular.bootstrap(document.documentElement, ['main']);
 
