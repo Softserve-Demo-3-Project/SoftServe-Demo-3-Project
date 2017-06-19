@@ -2,17 +2,21 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 
 import './home-page.scss';
+import editFieldDirective from './editingFieldDirective/editingFieldDirective';
+import collapseContentModule from './../core/directive/collapseDirective/collapseContentModule';
 
-import homePageController from './homePageController';
+import HomeController from './HomeController';
 
 export default angular
-    .module('main.home', ['ngRoute'])
+    .module('main.home', ['ngRoute', collapseContentModule])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/home', {
-                template: require('./home-page.html'),
-                controller: homePageController
+                template: require('./homeTemplate.html'),
+                controller: HomeController,
+                controllerAs: "home"
             })
     })
     .constant('ALL_ADS_URL', 'http://localhost:3000/advertisements')
+    .directive("editField", editFieldDirective)
     .name;

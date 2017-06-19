@@ -1,6 +1,6 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
-import uiBootstrap from 'angular-ui-bootstrap';
+import ngStrap from 'angular-strap';
 
 import 'bootstrap/dist/css/bootstrap.css';
 // import 'angular/angular-csp.css';
@@ -18,8 +18,6 @@ angular
     homeModule,
     loginModule,
     registerModule,
-    uiBootstrap,
-    publishModule,
     ngStrap
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
