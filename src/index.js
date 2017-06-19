@@ -1,4 +1,3 @@
-
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import uiBootstrap from 'angular-ui-bootstrap';
@@ -19,7 +18,9 @@ angular
     homeModule,
     loginModule,
     registerModule,
-    uiBootstrap
+    uiBootstrap,
+    publishModule,
+    ngStrap
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
