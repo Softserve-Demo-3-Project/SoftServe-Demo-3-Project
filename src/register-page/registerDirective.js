@@ -2,7 +2,7 @@ import RegisterController from './RegisterController';
 
 import './registerTemplate.scss';
 
-import './reg-form-css.css';
+import './registerTemplate.css';
 
 /* @ngInject */
 export default function registerDirective() {
