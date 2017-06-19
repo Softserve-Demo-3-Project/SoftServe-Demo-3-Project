@@ -1,6 +1,7 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngStrap from 'angular-strap';
+import ngMessages from 'angular-messages';
 
 import 'bootstrap/dist/css/bootstrap.css';
 // import 'angular/angular-csp.css';
@@ -15,6 +16,7 @@ import registerModule from './register-page/registerModule';
 angular
   .module('main', [
     ngRoute,
+    ngMessages,
     homeModule,
     loginModule,
     registerModule,
