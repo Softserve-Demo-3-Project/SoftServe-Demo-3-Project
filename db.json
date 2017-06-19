@@ -19,6 +19,16 @@
       "password": "passHash",
       "ads": [],
       "books": []
+    },
+    {
+      "id": 3,
+      "name": "Test",
+      "age": 999,
+      "email": "test@example.com",
+      "username": "test",
+      "password": "1234",
+      "ads": [],
+      "books": []
     }
   ],
   "ads": [
