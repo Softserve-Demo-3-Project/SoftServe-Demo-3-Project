@@ -3,6 +3,8 @@ import ngRoute from 'angular-route';
 import ngStrap from 'angular-strap';
 import ngCookies from 'angular-cookies';
 
+import ngMessages from 'angular-messages';
+
 import 'bootstrap/dist/css/bootstrap.css';
 // import 'angular/angular-csp.css';
 import './index.scss';
@@ -19,6 +21,7 @@ import { AuthenticationService } from './core/services/authentication.service';
 angular
   .module('main', [
     ngRoute,
+    ngMessages,
     homeModule,
     registerModule,
     ngStrap,
