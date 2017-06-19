@@ -1,10 +1,17 @@
 import angular from 'angular';
+import ngRoute from 'angular-route';
 
-import LoginController from './LoginController';
+import './login-page.scss';
 
-import './loginTemplate.html';
+import loginPageController from './loginPageController';
 
 export default angular
-    .module('main.login', [])
-    .controller('LoginController', LoginController)
+    .module('main.login', ['ngRoute'])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/login', {
+                template: require('./login-page.html'),
+                controller: loginPageController
+            })
+    })
     .name;

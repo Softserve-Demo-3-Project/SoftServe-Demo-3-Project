@@ -1,13 +1,18 @@
 import angular from 'angular';
+import ngRoute from 'angular-route';
 
-import HomeController from './HomeController';
+import './home-page.scss';
 
-import { AdsService } from '../core/services/adsService';
-
-import './homeTemplate.scss';
+import homePageController from './homePageController';
 
 export default angular
-    .module('main.home', [])
-    .controller('HomeController', HomeController)
-    .service('AdsService', AdsService)
+    .module('main.home', ['ngRoute'])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/home', {
+                template: require('./home-page.html'),
+                controller: homePageController
+            })
+    })
+    .constant('ALL_ADS_URL', 'http://localhost:3000/advertisements')
     .name;
