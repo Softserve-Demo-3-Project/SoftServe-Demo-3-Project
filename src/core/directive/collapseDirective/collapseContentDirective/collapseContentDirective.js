@@ -5,7 +5,7 @@ export default function () {
         restrict: "E",
         transclude: true,
         scope: {
-            header: "@",
+            header: "=",
             body: "=",
         },
     }
