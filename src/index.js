@@ -14,6 +14,7 @@ import './index.scss';
 import homeModule from './home-page/homeModule';
 import loginModule from './login-page/loginModule';
 import registerModule from './register-page/registerModule';
+import publishModule from './publish-page/publishModule';
 import navigationDirective from './core/directive/navigation/navigationDirective';
 import { UserService } from './core/services/user.service';
 import { AuthenticationService } from './core/services/authentication.service';
@@ -25,6 +26,7 @@ angular
     homeModule,
     registerModule,
     loginModule,
+    publishModule,
     ngStrap,
     ngCookies
   ])
