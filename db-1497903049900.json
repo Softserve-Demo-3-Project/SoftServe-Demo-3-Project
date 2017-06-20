@@ -33,6 +33,21 @@
   ],
   "ads": [
     {
+      "id": 1,
+      "author": "gosho1",
+      "title": "some1 title",
+      "dateOfPublish": "date",
+      "description": "some1 description",
+      "guests": 3,
+      "bed": 2,
+      "picture": "../playground/images/noimg.png",
+      "location": "some1 location",
+      "contacts": "some1 contacts",
+      "prise": 11,
+      "type": "some1 type",
+      "book": {}
+    },
+    {
       "id": 2,
       "author": "toncho2",
       "title": "some2 title",
@@ -106,36 +121,6 @@
       "prise": 16,
       "type": "some6 type",
       "authurRole": "some6 role"
-    },
-    {
-      "author": "gosho1",
-      "title": "some1 title",
-      "dateOfPublish": "date",
-      "description": "some1 description",
-      "guests": 3,
-      "bed": 2,
-      "picture": "../playground/images/noimg.png",
-      "location": "some1 location",
-      "contacts": "some1 contacts",
-      "prise": 11,
-      "type": "some1 type",
-      "book": {},
-      "id": 7
-    },
-    {
-      "author": "denis",
-      "title": "some1 title",
-      "dateOfPublish": "date",
-      "description": "some1 description",
-      "guests": 3,
-      "bed": 2,
-      "picture": "../playground/images/noimg.png",
-      "location": "some1 location",
-      "contacts": "some1 contacts",
-      "prise": 11,
-      "type": "some1 type",
-      "book": {},
-      "id": 8
     }
   ]
 }

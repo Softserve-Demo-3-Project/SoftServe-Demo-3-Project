@@ -1,9 +1,14 @@
 export class AdsService {
-    constructor($http){
+    /* @ngInject */
+    constructor($http) {
         this.$http = $http;
     }
 
     getAds() {
-        return this.$http.get('http://localhost:3000/advertisements').then((response) => response.data);
+        return this.$http.get('http://localhost:3000/ads').then((response) => response.data);
+    }
+
+    updateAd() {
+        
     }
 }
