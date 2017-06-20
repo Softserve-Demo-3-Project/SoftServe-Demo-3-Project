@@ -3,10 +3,8 @@
         <!-- Enter Name -->
         <div class="form-group">
             <label for="name" class="control-label">Name</label>
-            <input type="text" name="name" class="form-control" ng-model="user.name" ng-pattern="/[a-zA-Zа-яА-Я]+/" id="name" required="" placeholder=" Petar Petrov">
-            <div ng-messages="registerForm.name.$error" ng-show="registerForm.name.$touched
-
-            " style="color:maroon" role="alert">
+            <input type="text" name="name" class="form-control" ng-model="user.name" ng-pattern="/[a-zA-Zа-яА-Я]+/" id="name" required="" placeholder="Example: Petar Petrov">
+            <div ng-messages="registerForm.name.$error" ng-show="registerForm.name.$touched" style="color:maroon" role="alert">
                 <div ng-message="required">Your name is required</div>
             </div>
         </div>
@@ -14,35 +12,37 @@
         <div class="form-group">
             <label for="age" class="control-label">Age</label>
             <input type="number" name="age" class="form-control" ng-model="user.age" ng-min="18" min="18" id="age" required="" placeholder="Enter your age">
-            <div ng-messages="registerForm.age.$error" ng-show="registerForm.name.$touched" style="color:maroon" role="alert">
-                <div ng-message="min">Minimum age 18</div>
+            <div ng-messages="registerForm.age.$error" ng-show="registerForm.age.$touched" style="color:maroon" role="alert">
+                <div ng-message="min">You must be at leats 18 years old</div>
             </div>
         </div>
         <!-- Enter E-mail -->
         <div class="form-group">
             <label for="email" class="control-label">Email</label>
-            <input type="email" name="email" class="form-control" ng-model="user.email" id="email" required="" placeholder="Example: mail@mail.net">
-            <div ng-messages="registerForm.email.$error" ng-show="registerForm.name.$touched" style="color:maroon" role="alert">
-                <div ng-message="min">Your e-mail is required</div>
+            <input type="email" name="email" class="form-control" ng-model="user.email" ng-pattern="/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/" id="email" required="" placeholder="Example: mail@mail.net">
+            <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched" style="color:maroon" role="alert">
+                <div ng-message="required">Your e-mail is required</div>
             </div>
+            <br>
             <!-- Enter Username -->
             <div class="form-group">
                 <label for="username" class="control-label">Username</label>
                 <input type="text" name="username" ng-minlength="5" ng-maxlength="20" class="form-control" ng-model="user.username" ng-pattern="/^[A-Za-z0-9_]{1,32}$/" ng-minlength="7" id="username" required="" placeholder="Enter your username">
                 <div ng-messages="registerForm.username.$error" style="color:maroon" role="alert">
-                    <div ng-message="required">You Username is too short ot too long</div>
+                    <div ng-message="minlength">Your Username must be between 7 and 20 characters long</div>
                 </div>
+                <br>
                 <!-- Enter Password -->
                 <div class="form-group">
                     <label for="password" class="control-label">Password</label>
                     <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="7" id="password" required="" placeholder="Enter your password">
                     <div ng-messages="registerForm.password.$error" style="color:maroon" role="alert">
-                    <div ng-message="">You Username is too short ot too long</div>
-                </div>
+                        <div ng-message="minlength">You Password must be at least 7 symbols long</div>
+                    </div>
                 </div>
                 <!-- Register button -->
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit" ng-disabled="!registerForm.name.$valid || !registerForm.number.$valid || !registerForm.email.$valid || !registerForm.username.$valid || !registerForm.password.$valid">Register</button>
+                    <button class="btn btn-primary" type="submit" ng-disabled="!registerForm.name.$valid || !registerForm.age.$valid || !registerForm.email.$valid || !registerForm.username.$valid || !registerForm.password.$valid">Register</button>
                 </div>
     </form>
     </div>
