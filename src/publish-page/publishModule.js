@@ -1,9 +1,9 @@
     import angular from 'angular';
-import ngRoute from 'angular-route';
+    import ngRoute from 'angular-route';
 
-import './publish-page.scss';
+    import './publish-page.css';
 
-import PublishPageController from './PublishPageController';
+    import PublishPageController from './PublishPageController';
 
 export default angular
     .module('main.publish', ['ngRoute'])

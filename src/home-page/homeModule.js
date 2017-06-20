@@ -2,8 +2,9 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 
 import './home-page.scss';
-import editFieldDirective from './editingFieldDirective/editingFieldDirective';
+import editFieldDirective from './../core/directive/editingFieldDirective/editingFieldDirective';
 import collapseContentModule from './../core/directive/collapseDirective/collapseContentModule';
+import { AdsService } from './../core/services/adsService';
 
 import HomeController from './HomeController';
 
@@ -17,6 +18,6 @@ export default angular
                 controllerAs: "home"
             })
     })
-    .constant('ALL_ADS_URL', 'http://localhost:3000/advertisements')
     .directive("editField", editFieldDirective)
+    .service("AdsService", AdsService)
     .name;

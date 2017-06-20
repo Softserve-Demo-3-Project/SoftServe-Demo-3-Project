@@ -1,6 +1,7 @@
 export default class registerPageController {
-    constructor($scope) {
+  constructor($scope) {
 
-        $scope.register = "Register"; 
-    }
+    $scope.register = "Register";
+    
+  }
 }

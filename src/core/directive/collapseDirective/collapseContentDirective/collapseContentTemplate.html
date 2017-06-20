@@ -5,7 +5,7 @@
             <div ng-show="editing" class="input-group">
                 <input ng-model="header" type="text" class="form-control" />
             </div>
-            <button ng-click="editing = !editing" class="btn btn-primary">{{ editing ? 'Save' : 'Edit' }}</button>
+            <button ng-show="isLoggedIn()" ng-click="editing = !editing" class="btn btn-primary">{{ editing ? 'Save' : 'Edit' }}</button>
         </h4>
     </div>
     <div class="panel-collapse" role="tabpanel" bs-collapse-target animation>

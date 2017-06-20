@@ -4,7 +4,7 @@ export default class LoginController {
     	this.userService = userService;
     	this.authenticationService = authenticationService;
     	this.$location = $location;
-        this.init();
+      this.init();
     }
 
     init() {
