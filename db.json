@@ -29,6 +29,67 @@
       "password": "1234",
       "ads": [],
       "books": []
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "name": "edsfdfdsf",
+      "age": 23,
+      "email": "asdasda@abv.bg",
+      "username": "213232134213ss",
+      "password": "sdfsdfsfd",
+      "id": 11
+    },
+    {
+      "name": "Valeri Hristov",
+      "age": 45,
+      "email": "valeri@abv.bg",
+      "username": "valio_kita",
+      "password": "12345678",
+      "id": 12
+    },
+    {
+      "name": "Valeri Hristov",
+      "age": 23,
+      "email": "valer@abv.bg",
+      "username": "23dsdssds",
+      "password": "12345678",
+      "id": 13
+    },
+    {
+      "name": "Valeri",
+      "age": 23,
+      "email": "valeri@abv.bg",
+      "username": "Valeri",
+      "password": "12345678",
+      "id": 14
+    },
+    {
+      "name": "Петър Колев",
+      "age": 27,
+      "email": "petar_g_kolev@abv.bg",
+      "username": "XxXtraCookie",
+      "password": "1234567890",
+      "id": 15
     }
   ],
   "ads": [
