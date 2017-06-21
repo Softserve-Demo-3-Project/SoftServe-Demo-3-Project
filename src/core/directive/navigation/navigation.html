@@ -1,21 +1,26 @@
 <nav class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-        <a class="navbar-brand" href="#" ng-bind="nav.user.username"></a>
+
+    <a class="navbar-brand" href="#" ng-bind="nav.user.username || ''"></a>
+  </div>
+  <div class="collapse navbar-collapse " uib-collapse="isNavCollapsed">
+    <ul class="nav navbar-nav navigation-left">
+      <li><a href="#/">HOME</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navigation-right">
+      <li class="btn btn-default nav-btn" ng-if="!nav.isLogged()"><a href="#/login">LOGIN</a></li>
+      <li class="btn btn-default nav-btn" ng-if="!nav.isLogged()"><a href="#/register">REGISTER</a></li>
+    </ul>
+    <div class="nav navbar-nav pull-right" ng-if="nav.isLogged()">
+      <span class="btn btn-default nav-btn-login" ng-click="nav.logout()">LOGOUT</span>
+
     </div>
-    <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
-        <ul class="nav navbar-nav">
-            <li><a href="#/">home</a></li>
-            <li ng-if="!nav.isLogged()"><a href="#/login">login</a></li>
-            <li ng-if="!nav.isLogged()"><a href="#/register">register</a></li>
-        </ul>
-        <div class="nav navbar-nav pull-right" ng-if="nav.isLogged()">
-            <span class="btn btn-default" ng-click="nav.logout()">Logout</span>
-        </div>
-    </div>
+  </div>
 </nav>
