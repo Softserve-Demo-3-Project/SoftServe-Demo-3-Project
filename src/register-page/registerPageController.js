@@ -1,18 +1,29 @@
 export default class registerPageController {
-  constructor(regUserService, $http, $location) {
-    this.register = "Register";
-    this.regUserService = regUserService;
-    this.$location = $location;
-  }
+    constructor(userService, authenticationService, $location) {
+        this.register = "Register";
+        this.userService = userService;
+        this.$location = $location;
+        this.authenticationService = authenticationService;
+        this.hasLoggedIn = false;
+    }
 
-  onSubmit() {
-    let _this = this;
-    let name = this.name;
-    let age = this.age;
-    let email = this.email;
-    let username = this.username;
-    let password = this.password;
-    this.hasFailed = false;
-    this.hasRegister = false;
-  }
+    onSubmit(user) {
+    	let self = this;
+        let { name, age, email, username, password } = user;
+        self.userService.register(name, age, email, username, password).then((res) => {
+            self.userService.login(username, password).then(function(response) {
+                let data = response.data;
+
+                if (data.length) {
+                    let user = data[0];
+                    self.hasLoggedIn = true;
+                    self.authenticationService.setCredentials(username, password);
+                    self.$location.path('/');
+                }
+            });
+        })
+        .catch(err => {
+        	console.log('ura!');
+        })
+    }
 }

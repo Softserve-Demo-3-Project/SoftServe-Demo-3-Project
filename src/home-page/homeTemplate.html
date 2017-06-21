@@ -1,9 +1,22 @@
-<div class="container">
-<button>
-    <a href="#/publish">publish</a>
-</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-lg-2 filetersNavigation">
+            <button class="btn-blue">
+          <a href="#/publish">publish</a>
+      </button>
+        </div>
 
-    <div class="panel-group" aria-multiselectable="true" start-collapsed="true" role="tablist" bs-collapse>
-        <collapse-content ng-repeat="ad in home.ads" is-logged-in="home.isLoggedIn()" on-edit="home.onEdit" header="ad.title" body="ad"></collapse-content>
+        <div class="col col-lg-6">
+            <div class="panel-group" aria-multiselectable="true" start-collapsed="true" role="tablist" bs-collapse>
+                <collapse-content ng-repeat="ad in home.ads" is-logged-in="home.isLoggedIn()" on-edit="home.onEdit" header="ad.title" body="ad"></collapse-content>
+            </div>
+        </div>
+
+        <div class="col col-lg-4">
+            <div map>
+
+            </div>
+        </div>
     </div>
+
 </div>

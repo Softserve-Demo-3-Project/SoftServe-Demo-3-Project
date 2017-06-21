@@ -1,9 +1,9 @@
 <div class="container main-content">
-  <form name="registerForm" ng-submit="onSubmit()" novalidate="novalidate">
+  <form class="registrationForm" name="registerForm" ng-submit="register.onSubmit(register.user)" novalidate="novalidate">
     <!-- Enter Name -->
     <div class="form-group">
       <label for="name" class="control-label"><span id="reqInfo">*</span> Name</label>
-      <input type="text" name="name" class="form-control" ng-model="user.name" ng-pattern="/[a-zA-Zа-яА-Я]+/" id="name" required=""
+      <input type="text" name="name" class="form-control" ng-model="register.user.name" ng-pattern="/[a-zA-Zа-яА-Я]+/" id="name" required=""
         placeholder="Example: Petar Petrov">
       <div ng-messages="registerForm.name.$error" ng-show="registerForm.name.$touched" style="color:maroon" role="alert">
         <div ng-message="required">Your name is required</div>
@@ -12,7 +12,7 @@
     <!-- User Age-->
     <div class="form-group">
       <label for="age" class="control-label"><span id="reqInfo">*</span> Age</label>
-      <input type="number" name="age" class="form-control" ng-model="user.age" ng-min="18" min="18" id="age" required="" placeholder="Enter your age">
+      <input type="number" name="age" class="form-control" ng-model="register.user.age" ng-min="18" min="18" id="age" required="" placeholder="Enter your age">
       <div ng-messages="registerForm.age.$error" ng-show="registerForm.age.$touched" style="color:maroon" role="alert">
         <div ng-message="min">You must be at leats 18 years old</div>
       </div>
@@ -20,7 +20,7 @@
     <!-- Enter E-mail -->
     <div class="form-group">
       <label for="email" class="control-label"><span id="reqInfo">*</span> E-mail</label>
-      <input type="email" name="email" class="form-control" ng-model="user.email" ng-pattern="/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/"
+      <input type="email" name="email" class="form-control" ng-model="register.user.email" ng-pattern="/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/"
         id="email" required="" placeholder="Example: mail@mail.net">
       <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched" style="color:maroon" role="alert">
         <div ng-message="required">Your valid e-mail is required</div>
@@ -29,7 +29,7 @@
       <!-- Enter Username -->
       <div class="form-group">
         <label for="username" class="control-label"><span id="reqInfo">*</span> Username</label>
-        <input type="text" name="username" ng-minlength="5" ng-maxlength="20" class="form-control" ng-model="user.username" ng-pattern="/^[A-Za-z0-9_]{1,32}$/"
+        <input type="text" name="username" ng-minlength="5" ng-maxlength="20" class="form-control" ng-model="register.user.username" ng-pattern="/^[A-Za-z0-9_]{1,32}$/"
           ng-minlength="7" id="username" required="" placeholder="Enter your username">
         <div ng-messages="registerForm.username.$error" style="color:maroon" role="alert">
           <div ng-message="minlength">Your Username must be between 7 and 20 characters long</div>
@@ -38,7 +38,7 @@
         <!-- Enter Password -->
         <div class="form-group">
           <label for="password" class="control-label"><span id="reqInfo">*</span> Password</label>
-          <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="7" id="password" required=""
+          <input type="password" name="password" class="form-control" ng-model="register.user.password" ng-minlength="7" id="password" required=""
             placeholder="Enter your password">
           <div ng-messages="registerForm.password.$error" style="color:maroon" role="alert">
             <div ng-message="minlength">You Password must be at least 7 symbols long</div>

@@ -13,4 +13,18 @@ export  class UserService {
 		    }
         });
     }
+
+    register(name, age, email, username, password) {
+        return this.$http({
+            method: 'POST',
+            url: 'http://localhost:3000/users',
+            data: {
+                name: name,
+                age: age,
+                email: email,
+                username: username,
+                password: password
+            }
+        });
+    }
 }
