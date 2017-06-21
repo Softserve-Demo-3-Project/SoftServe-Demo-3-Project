@@ -34,7 +34,7 @@ export class AuthenticationService {
     }
 }
 
-export class Base64 {
+class Base64 {
     constructor() {
         this.keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
     }
