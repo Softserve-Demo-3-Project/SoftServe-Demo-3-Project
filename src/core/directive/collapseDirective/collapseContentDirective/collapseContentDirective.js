@@ -3,11 +3,11 @@ export default function () {
         template: require('./collapseContentTemplate.html'),
         replace: true,
         restrict: "E",
-        transclude: true,
         scope: {
             header: "=",
             body: "=",
-            isLoggedIn: "&"
+            isLoggedIn: "&",
+            onEdit: "="
         },
     }
 }

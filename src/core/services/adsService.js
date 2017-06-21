@@ -8,7 +8,7 @@ export class AdsService {
         return this.$http.get('http://localhost:3000/ads').then((response) => response.data);
     }
 
-    updateAd() {
-        
+    updateAd(query) {
+        this.$http.put(`http://localhost:3000/ads/${query.id}`, query);
     }
 }

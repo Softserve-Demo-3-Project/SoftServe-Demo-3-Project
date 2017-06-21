@@ -108,17 +108,17 @@
       "authurRole": "some6 role"
     },
     {
-      "author": "gosho1",
+      "author": "test",
       "title": "some1 title",
       "dateOfPublish": "date",
       "description": "some1 description",
       "guests": 3,
-      "bed": 2,
+      "bed": 5,
       "picture": "../playground/images/noimg.png",
       "location": "some1 location",
       "contacts": "some1 contacts",
       "prise": 11,
-      "type": "some1 type",
+      "type": "This changed",
       "book": {},
       "id": 7
     },

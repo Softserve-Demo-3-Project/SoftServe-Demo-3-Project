@@ -2,7 +2,8 @@ export default function () {
     return {
         restrict: "E",
         scope: {
-            body: "="
+            body: "=",
+            onEdit: "="
         },
         template: require('./editingFieldTemplate.html')
     }
