@@ -23,7 +23,7 @@
       <input type="email" name="email" class="form-control" ng-model="user.email" ng-pattern="/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/"
         id="email" required="" placeholder="Example: mail@mail.net">
       <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched" style="color:maroon" role="alert">
-        <div ng-message="required">Your e-mail is required</div>
+        <div ng-message="required">Your valid e-mail is required</div>
       </div>
       <br>
       <!-- Enter Username -->

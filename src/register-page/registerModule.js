@@ -3,7 +3,8 @@ import ngRoute from 'angular-route';
 
 import './register-page.css';
 
-import regPageController from './registerPageController';
+import registerPageController from './registerPageController';
+import { RegUserService } from './../core/services/regUser.service';
 
 export default angular
     .module('main.register', ['ngRoute'])
@@ -11,8 +12,10 @@ export default angular
         $routeProvider
             .when('/register', {
                 template: require('./registerTemplate.html'),
-                controller: regPageController
+                controller: registerPageController,
+                controllerAs: 'register'
             })
     })
+    .service('regUserService', RegUserService)
     .constant('USERS_URL', '')
     .name;
