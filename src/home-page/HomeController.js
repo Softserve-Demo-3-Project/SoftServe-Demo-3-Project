@@ -4,9 +4,10 @@ export default class HomeController {
         this.ads = [];
         this.AdsService = AdsService;
         this.$rootScope = $rootScope;
-        this.fetchAds();
-        this.onEdit = this.onEdit.bind(this);
         this.fetchAds = this.fetchAds.bind(this);
+        this.onEdit = this.onEdit.bind(this);
+        this.onDelete = this.onDelete.bind(this);
+        this.fetchAds();
     }
 
     fetchAds() {
@@ -21,5 +22,11 @@ export default class HomeController {
 
     onEdit(query) {
         this.AdsService.updateAd(query);
+    }
+
+    onDelete(id) {
+        this.AdsService.deleteAd(id).then(() => {
+            this.fetchAds();
+        });
     }
 }

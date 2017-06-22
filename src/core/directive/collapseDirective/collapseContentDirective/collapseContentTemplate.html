@@ -1,11 +1,19 @@
-<div class="panel panel-default" data-startCollapsed="false">
+<div class="panel panel-default" data-startCollapsed="false" allow-multiple="true">
     <div class="panel-heading" role="tab">
-        <h4 class="panel-title" bs-collapse-toggle animation>
+        <h4 class="panel-title">
             <a ng-hide="editing" style="cursor: pointer;">{{ header }}</a>
             <div ng-show="editing" class="input-group">
                 <input ng-model="header" type="text" class="form-control" />
             </div>
-            <button ng-show="isLoggedIn() === body.author" ng-click="editing = !editing" class="btn btn-primary">{{ editing ? 'Save' : 'Edit' }}</button>
+            <span bs-collapse-toggle animation>
+                <button class="btn btn-primary" >Show more</button>
+                <span ng-show="isLoggedIn() === body.author">
+                    <button ng-click="editing = !editing" class="btn btn-warning">{{ editing ? 'Save' : 'Edit' }}</button>
+                    <form ng-submit="onDelete({id: body.id})">
+                        <input type="submit" class="btn btn-danger" value="Delete"/>
+                    </form>
+                </span>
+            </span>
         </h4>
     </div>
     <div class="panel-collapse" role="tabpanel" bs-collapse-target animation>

@@ -7,7 +7,8 @@ export default function () {
             header: "=",
             body: "=",
             isLoggedIn: "&",
-            onEdit: "="
+            onEdit: "=",
+            onDelete: "&"
         },
     }
 }

@@ -8,7 +8,7 @@
 
         <div class="col col-lg-6">
             <div class="panel-group" aria-multiselectable="true" start-collapsed="true" role="tablist" bs-collapse>
-                <collapse-content ng-repeat="ad in home.ads" is-logged-in="home.isLoggedIn()" on-edit="home.onEdit" header="ad.title" body="ad"></collapse-content>
+                <collapse-content ng-repeat="ad in home.ads" is-logged-in="home.isLoggedIn()" on-edit="home.onEdit" on-delete="home.onDelete(id)" header="ad.title" body="ad"></collapse-content>
             </div>
         </div>
 
