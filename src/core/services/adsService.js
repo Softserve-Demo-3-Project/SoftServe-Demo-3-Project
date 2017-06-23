@@ -1,13 +1,14 @@
 export class AdsService {
-    /* @ngInject */
-    constructor($http) {
-        this.$http = $http;
-    }
+  /* @ngInject */
+  constructor($http) {
+    this.$http = $http;
+  }
 
-    getAds() {
-        return this.$http.get('http://localhost:3000/ads').then((response) => response.data);
-    }
+  getAds() {
+    return this.$http.get('http://localhost:3000/ads').then((response) => response.data);
+  }
 
+<<<<<<< Updated upstream
     updateAd(query) {
         this.$http.put(`http://localhost:3000/ads/${query.id}`, query);
     }
@@ -16,3 +17,9 @@ export class AdsService {
         this.$http.delete(`http://localhost:3000/ads/${id}`);
     }
 }
+=======
+  updateAd(query) {
+    this.$http.put(`http://localhost:3000/ads/${query.id}`, query);
+  }
+}
+>>>>>>> Stashed changes

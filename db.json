@@ -90,6 +90,38 @@
       "username": "XxXtraCookie",
       "password": "1234567890",
       "id": 15
+    },
+    {
+      "name": "Петрокъл",
+      "age": 27,
+      "email": "mail@mail",
+      "username": "XxXtraCookie",
+      "password": "1234567",
+      "id": 16
+    },
+    {
+      "name": "Petar Petrov",
+      "age": 22,
+      "email": "mail@meil",
+      "username": "XxXtraCookie",
+      "password": "1234567",
+      "id": 17
+    },
+    {
+      "name": "Tester",
+      "age": 18,
+      "email": "mail@mail",
+      "username": "Tester",
+      "password": "1234567",
+      "id": 18
+    },
+    {
+      "name": "Tester",
+      "age": 18,
+      "email": "mail@mail",
+      "username": "Tester",
+      "password": "1234567",
+      "id": 19
     }
   ],
   "ads": [
