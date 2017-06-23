@@ -11,16 +11,27 @@
   </div>
   <div class="collapse navbar-collapse " uib-collapse="isNavCollapsed">
     <ul class="nav navbar-nav navigation-left">
-      <li><a href="#/">HOME</a></li>
+      <li>
+        <a href="#/">HOME</a>
+      </li>
     </ul>
 
     <ul class="nav navbar-nav navigation-right">
-      <li class="nav-btn" ng-if="!nav.isLogged()"><a href="#/login">LOGIN</a></li>
-      <li class="nav-btn" ng-if="!nav.isLogged()"><a href="#/register">REGISTER</a></li>
-    </ul>
-    <div class="nav navbar-nav pull-right" ng-if="nav.isLogged()">
-      <span class="btn btn-default nav-btn-login" ng-click="nav.logout()">LOGOUT</span>
+      <li class="nav-btn" ng-if="!nav.isLogged()">
+        <a href="#/login">LOGIN</a>
+      </li>
 
+      <li class="nav-btn" ng-if="!nav.isLogged()">
+        <a href="#/register">REGISTER</a>
+      </li>
+    </ul>
+
+    <div class="nav navbar-nav pull-right" ng-if="nav.isLogged()">
+      <ul class="nav navbar-nav navigation-left">
+        <li class="nav-btn">
+          <a ng-click="nav.logout()">LOGOUT</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

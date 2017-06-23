@@ -17,9 +17,7 @@
   background-color: rgb(53, 73, 107);
 }
 
-.nav-btn-login {
-  padding: 15px;
-}
+
 
 .navigation-right{
   float: right;
@@ -33,6 +31,7 @@
 
 .navigation-left a{
   color: white !important;
+  cursor:pointer;
 }
 
 .navigation-left a:hover{
