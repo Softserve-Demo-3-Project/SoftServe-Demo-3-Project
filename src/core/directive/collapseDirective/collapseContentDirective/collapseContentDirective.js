@@ -10,5 +10,10 @@ export default function () {
             onEdit: "=",
             onDelete: "&"
         },
+        controller: function ($scope) {
+            $scope.editingToggle = () => {
+                $scope.editing = !$scope.editing;
+            }
+        }
     }
 }

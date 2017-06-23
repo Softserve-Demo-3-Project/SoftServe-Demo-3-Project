@@ -9,10 +9,10 @@ export class AdsService {
   }
 
   updateAd(query) {
-    this.$http.put(`http://localhost:3000/ads/${query.id}`, query);
+    return this.$http.put(`http://localhost:3000/ads/${query.id}`, query);
   }
 
   deleteAd(id) {
-    this.$http.delete(`http://localhost:3000/ads/${id}`);
+     return this.$http.delete(`http://localhost:3000/ads/${id}`);
   }
 }
