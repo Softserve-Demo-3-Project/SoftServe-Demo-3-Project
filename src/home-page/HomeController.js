@@ -12,7 +12,8 @@ export default class HomeController {
 
     fetchAds() {
         this.AdsService.getAds().then((res) => {
-            this.ads = res;
+            this.ads = res.data;
+            console.log(res)
         });
     }
 
@@ -25,7 +26,8 @@ export default class HomeController {
     }
 
     onDelete(id) {
-        this.AdsService.deleteAd(id).then(() => {
+        this.AdsService.deleteAd(id).then((res) => {
+            console.log(res)
             this.fetchAds();
         });
     }

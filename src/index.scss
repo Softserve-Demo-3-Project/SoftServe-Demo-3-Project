@@ -15,8 +15,13 @@ body {
 
 }
 
+.dropdown-menu {
+  text-align: left;
+  padding: 0;
+  border-radius: 4px;
+}
+
 .dropdown-menu > li > button {
-  display: block;
   font-weight: normal;
   line-height: 1.42857143;
   color: #333;
@@ -24,7 +29,9 @@ body {
   outline:none !important;
   border: none; 
   background-color: white;
-  text-align:center;
+  text-align:left;
+  padding: 5px 20px;
+  width: 100%;
 }
 .dropdown-menu > li > button:hover,
 .dropdown-menu > li > button:focus {

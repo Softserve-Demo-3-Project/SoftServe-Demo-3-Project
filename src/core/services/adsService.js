@@ -5,7 +5,9 @@ export class AdsService {
   }
 
   getAds() {
-    return this.$http.get('http://localhost:3000/ads').then((response) => response.data);
+    return this.$http.get('http://localhost:3000/ads')
+    .then((res) => res)
+    .catch((err) => err);
   }
 
   updateAd(query) {
