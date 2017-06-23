@@ -20,5 +20,3 @@ export class RegUserService {
     });
   }
 }
-
-
