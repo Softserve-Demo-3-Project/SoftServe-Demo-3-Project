@@ -7,9 +7,6 @@ export default class registerPageController {
     this.hasLoggedIn = false;
   }
 
-
-
-
   onSubmit(user) {
     let self = this;
     let {
