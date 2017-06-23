@@ -40,11 +40,11 @@
     <div class="form-group">
       <label for="username" class="control-label"><span id="reqInfo">*</span> Username</label>
       <input type="text" name="username" id="username" required="" placeholder="Enter your username" ng-minlength="5" class="form-control"
-        ng-model="register.user.username" ng-pattern="/^[A-Za-z0-9_]{1,32}$/" ng-minlength="7">
-      <div ng-messages="registerForm.username.$error" style="color:maroon" role="alert">
-        <div ng-message="minlength">Your Username must be between 7 and 20 characters long</div>        
-      </div>      
-      <div ng-if="registerForm.username.$touched">Username is required</div>
+        ng-model="register.user.username" ng-pattern="/^[A-Za-z0-9_]{1,32}$/" ng-minlength="7" register.user.username-validator register.user.username-availability>
+      <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched" style="color:maroon" role="alert">
+        <div ng-message="minlength">Your Username must be between 7 and 20 characters long</div>
+        <div ng-message="required">Your Username must be between 7 and 20 characters long</div>        
+      </div>
     </div>
 
     <!-- Enter Password -->

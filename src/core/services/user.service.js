@@ -51,15 +51,68 @@ export class UserService {
   // Username existance check
 
 
+
   isUserTaken(username) {
-    return this.$http({
-      method: 'GET',
-      url: 'http://localhost:3000/users',
-      data: {
-        username: username
+    directive('usernameAvailability', function ($http) {
+      return {
+        require: 'ngModel',
+        link: function ($scope, element, attrs, model) {
+          model.$validators.usernameAvailability = function (modelValue, viewValue) {
+            let value = viewValue || modelValue;
+            if (value && value.length >= 7) {
+              return $http.get('http://localhost:3000/users' + value);
+            } else {
+              return true;
+            }
+          }
+        }
       }
     });
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  //   isUserTaken() {
+
+  //     directive('usernameAvailable', function ($timeout, $q) {
+  //       return {
+  //         require: '^ngModel',
+  //         link: function (scope, elm, attr, model) {
+  //           model.$asyncValidators.usernameExists = function (modelValue, viewValue) {
+  //             let value = viewValue || modelValue;
+  //             return $http.get('http://localhost:3000/users' + value);
+  //             let defer = $q.defer();
+  //             $timeout(function () {
+  //               model.$setValidity('usernameExists', false);
+  //               defer.resolve;
+  //             }, 1000);
+  //             return defer.promise;
+  //           };
+  //         }
+  //       }
+  //     });
+
+  //   }
+
+
+  //   isUserTaken(username) {
+  //     return this.$http({
+  //       method: 'GET',
+  //       url: 'http://localhost:3000/users',
+  //       data: {
+  //         username: username
+  //       }
+  //     });
+  //   }
 
   //   isUserTaken(username, ) {
   //     UserService.getUsername.username.$asyncValidators.uniqueUsername = function (modelValue, viewValue) {
