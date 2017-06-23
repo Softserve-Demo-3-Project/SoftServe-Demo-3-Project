@@ -18,4 +18,27 @@ export default angular
   })
   .service('regUserService', RegUserService)
   .constant('USERS_URL', '')
+  .directive('userValidator', function ($http, $q) {
+    return {
+      require: 'ngModel',
+      link: function ($scope, element, attrs, ngModel) {
+        ngModel.$asyncValidators.userAvailable = function (modelValue, viewValue) {
+
+          var userInput = modelValue || viewValue;
+          return $http.get('http://localhost:3000/users?username=' + userInput)
+            .then(function ({data}) {
+              //username exists, this means validation success
+              if (data.length) {
+                throw new Error();
+              }
+              return true;
+            })
+            .catch(function () {
+              return $q.reject('selected username does not exists');
+            })
+
+        }
+      }
+    }
+  })
   .name;
