@@ -9,10 +9,32 @@
   margin-right: 5px;
 }
 
+.nav-btn a{
+  color: white !important;
+}
+
+.nav-btn:hover{
+  background-color: rgb(53, 73, 107);
+}
+
 .nav-btn-login {
   padding: 15px;
 }
 
 .navigation-right{
   float: right;
+}
+
+.navbar{
+  margin-bottom: 0 !important;
+  background-color: rgb(47, 60, 83);
+  color: white;
+}
+
+.navigation-left a{
+  color: white !important;
+}
+
+.navigation-left a:hover{
+  color: rgb(181, 188, 237) !important;
 }
