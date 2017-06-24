@@ -73,6 +73,7 @@
                 ng-pattern="/^[A-Za-z0-9_]{1,32}$/"
                 ng-minlength="7"
                 user-validator
+                ng-model-options="{debounce : {'default' : 1500}}"
             />
             <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched" style="color:maroon" role="alert">
                 <div ng-message="minlength">Your Username must be between 7 and 20 characters long</div>
