@@ -2,11 +2,14 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngStrap from 'angular-strap';
 import ngCookies from 'angular-cookies';
+// import ngAnimate from 'angular-animate';
+
 
 import ngMessages from 'angular-messages';
 
 import 'bootstrap/dist/css/bootstrap.css';
 // import 'angular/angular-csp.css';
+
 import './index.scss';
 
 // import demoModule from './demo/demoModule';
@@ -28,7 +31,8 @@ angular
     loginModule,
     publishModule,
     ngStrap,
-    ngCookies
+    ngCookies,
+    // ngAnimate
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
@@ -66,6 +70,3 @@ angular
         }])
 
 angular.bootstrap(document.documentElement, ['main']);
-
-
-

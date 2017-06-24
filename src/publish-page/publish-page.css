@@ -18,6 +18,7 @@
 .containerPublishing{
   border: none;
   box-shadow: 0 0 30px rgb(53, 73, 107);
+  border-radius: 15px;
   padding: 30px;
   margin-top: 40px;
 }
@@ -53,3 +54,13 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
 .btn:hover{
   background: linear-gradient(140deg, rgba(53,73,107,1) 1%,rgba(72, 88, 115, 1) 35%,rgba(88, 110, 147, 1) 83%,rgba(53,73,102,1) 100%);
 }
+/*animation*/
+/*#button-forSubmit.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+
+/*#button-forSubmit.ng-enter.ng-enter-active {
+  opacity:1;
+}*/
