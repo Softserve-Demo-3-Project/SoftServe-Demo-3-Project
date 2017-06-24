@@ -4,7 +4,6 @@ import ngRoute from 'angular-route';
 import './register-page.css';
 
 import registerPageController from './registerPageController';
-import { RegUserService } from './../core/services/regUser.service';
 
 export default angular
   .module('main.register', ['ngRoute'])
@@ -16,7 +15,7 @@ export default angular
         controllerAs: 'register'
       })
   })
-  .service('regUserService', RegUserService)
+
   .constant('USERS_URL', '')
   .directive('userValidator', function ($http, $q) {
     return {
