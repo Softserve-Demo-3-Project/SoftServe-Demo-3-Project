@@ -14,7 +14,7 @@
                                 class="form-control"
                                 id="title"
                                 placeholder="Enter a Title"
-                                ng-model="title"
+                                ng-model="user.title"
                                 ng-required="true">
 
                             <div class="error-messaging" ng-show="formPublishing.title.$touched && formPublishing.title.$invalid">
@@ -30,8 +30,8 @@
                         <div>
                             <div class="form-group">
                                 <label for="types">Types:</label>
-                                <select ng-required="true" class="form-control" id="types">
-                                        <option ng-model="type" ng-repeat="option in options" value="{{option.id}}">{{option.type}}</option>
+                                <select ng-model="user.type" ng-required="true" class="form-control" id="types">
+                                        <option ng-repeat="option in options" value="{{option.id}}">{{option.type}}</option>
                                 </select>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                         <label for="button-forAttach">Attach picture:</label>
                         <br>
                         <label class="btn btn-primary btn-file">
-                              Attach picture: <input type="file" style="display: none;">
+                              Attach picture: <input file-model="user.image" type="file" style="display: none;" >
                         </label>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                                 class="form-control"
                                 placeholder="Enter Your full name"
                                 id="name"
-                                ng-model="author"
+                                ng-model="user.author"
                                 ng-required="true"
                                 ng-pattern="/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/">
                                 <!-- will cover and cases like this one
@@ -75,7 +75,7 @@
                                 class="form-control"
                                 placeholder="Enter a phone number"
                                 id="phone"
-                                ng-model="contacts"
+                                ng-model="user.contacts"
                                 ng-required="true"
                                 ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im">
 
@@ -91,11 +91,10 @@
                                 type="text"
                                 class="form-control"
                                 id="location"
-                                ng-model="location"
                                 ng-required="true">
 
-                            <div ng-model="lat" id="lat"></div>
-                            <div ng-model="lng" id="lng"></div>
+                                <input type="hidden" ng-model="user.fromLat">
+                                <input type="hidden" ng-model="user.fromLng">
 
 
                             <div class="error-messaging" ng-show="formPublishing.location.$touched && formPublishing.location.$invalid">
@@ -110,11 +109,12 @@
                                 type="number"
                                 min="1"
                                 class="form-control"
-                                placeholder="Enter a price"
+                                placeholder="Enter price in BGN"
                                 id="price"
-                                ng-model="price"
+                                ng-model="user.price"
                                 ng-required="true"
                                 ng-pattern="/^\s*(\+|-)?((\d+(\.\d\d)?)|(\.\d\d))\s*$/">
+
 
                             <div class="error-messaging"
                             ng-show="formPublishing.price.$touched && formPublishing.price.$invalid">
@@ -132,7 +132,7 @@
                                 rows="15"
                                 id="description"
                                 ng-required="true"
-                                ng-model="description"
+                                ng-model="user.description"
                                 ></textarea>
 
 
@@ -151,7 +151,7 @@
                       type="button"
                       name="button"
                       id="button-forSubmit"
-                      ng-click="SendData()"
+                      ng-click="sendData(user)"
                       ng-disabled="formPublishing.$invalid">Submit</button>
                   </div>
                 </div>

@@ -47,16 +47,9 @@ export class mapService {
 
         }
 
-        function autocoplate() {
-
-           
-
-        }
-
         return {
             loadScript,
-            initialize,
-            autocoplate
+            initialize
         }
 
     }

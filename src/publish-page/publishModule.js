@@ -1,19 +1,30 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
+// import base64  from 'angular-base64';
 
 // import ngAnimate from 'angular-animate';
 
 import './publish-page.css';
 
 import PublishPageController from './PublishPageController';
-import {mapService} from  '../core/services/map.service'
+import {mapService} from  '../core/services/map.service';
+import {AdsService} from '../core/services/adsService';
+import {convertToString} from '../core/services/convertToString.service';
+import fileModel from '../core/directive/fileUpload/fileModel';
 
-export default angular.module('main.publish', ['ngRoute']).config(function($routeProvider) {
+export default angular
+.module('main.publish', ['ngRoute'])
+.config(function($routeProvider) {
   $routeProvider.when('/publish', {
     template: require('./publish-page.html'),
     controller: PublishPageController
   })
-}).value('options', [
+})
+.service('convertToString', convertToString)
+.service('mapService', mapService) //delete it
+.service('AdsService', AdsService)
+.directive('fileModel', fileModel)
+.value('options', [
   {
     id: '1 Room',
     type: '1 Room'
@@ -28,5 +39,4 @@ export default angular.module('main.publish', ['ngRoute']).config(function($rout
     type: 'House'
   }
 ])
-.service('mapService', mapService)
 .name;

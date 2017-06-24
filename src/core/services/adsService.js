@@ -17,4 +17,8 @@ export class AdsService {
   deleteAd(id) {
      return this.$http.delete(`http://localhost:3000/ads/${id}`);
   }
+
+  postAd(body){
+    return this.$http.post('http://localhost:3000/ads', body);
+  }
 }
