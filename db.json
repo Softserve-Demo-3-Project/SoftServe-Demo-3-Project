@@ -122,6 +122,14 @@
       "username": "Tester",
       "password": "1234567",
       "id": 19
+    },
+    {
+      "name": "Test",
+      "age": 18,
+      "email": "test@test",
+      "username": "Testers",
+      "password": "1234567",
+      "id": 20
     }
   ],
   "ads": [
