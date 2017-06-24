@@ -24,11 +24,6 @@ form.registrationForm div.form-group input {
   background-color: #fff;
 }
 
-form.registrationForm div.form-group label {
-  color: #000;
-  text-shadow: 2px 2px 2px #fff;
-}
-
 form.registrationForm button {
   width: 100%;
   height: 40px;
@@ -36,7 +31,7 @@ form.registrationForm button {
   margin-top: 20px;
 }
 
-span#reqInfo {
+form.registrationForm span#reqInfo {
   font-size: 18px;
   font-weight: bold;
   color: rgb(255, 0, 0);
