@@ -12,11 +12,10 @@ export class mapService {
                 var key = 'AIzaSyBQX5028KFM6LIkKepvRme8HTu0-etasO0';
                 // Use global document since Angular's $document is weak
                 var script = document.createElement('script');
-                script.src = '//maps.googleapis.com/maps/api/js?key=AIzaSyBQX5028KFM6LIkKepvRme8HTu0-etasO0&callback=initMap&libraries=places';
+                script.src = `//maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&libraries=places`;
 
                 document.body.appendChild(script);
             }
-console.log(22);
 
             // Script loaded callback, send resolve
             $window.initMap = function () {
@@ -50,8 +49,7 @@ console.log(22);
 
         function autocoplate() {
 
-            var auto = new google.maps.places.Autocomplete();
-            auto.setTypes(['geocode'])
+           
 
         }
 
