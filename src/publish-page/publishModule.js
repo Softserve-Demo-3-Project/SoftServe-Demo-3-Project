@@ -1,10 +1,12 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
+
 // import ngAnimate from 'angular-animate';
 
 import './publish-page.css';
 
 import PublishPageController from './PublishPageController';
+import {mapService} from  '../core/services/map.service'
 
 export default angular.module('main.publish', ['ngRoute']).config(function($routeProvider) {
   $routeProvider.when('/publish', {
@@ -25,4 +27,6 @@ export default angular.module('main.publish', ['ngRoute']).config(function($rout
     id: 'House',
     type: 'House'
   }
-]).name;
+])
+.service('mapService', mapService)
+.name;
