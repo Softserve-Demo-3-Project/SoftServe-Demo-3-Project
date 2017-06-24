@@ -42,7 +42,7 @@ var cities = [
             // console.log();
             mapService.initialize();
 
-            mapService.autocoplate();
+            // mapService.autocoplate();
         })
 
 

@@ -16,6 +16,7 @@ export class mapService {
 
                 document.body.appendChild(script);
             }
+console.log(22);
 
             // Script loaded callback, send resolve
             $window.initMap = function () {
