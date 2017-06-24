@@ -8,6 +8,7 @@ export default class HomeController {
         this.onEdit = this.onEdit.bind(this);
         this.onDelete = this.onDelete.bind(this);
         this.fetchAds();
+        this.towns = ["all", "Emil", "Tobias", "Linus"];
     }
 
     fetchAds() {
