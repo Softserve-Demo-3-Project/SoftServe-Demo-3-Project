@@ -6,7 +6,7 @@ export class convertToString {
       return new Promise((resolve, reject) => {
 
         var fReader = new FileReader();
-        fReader.onload = function() {
+        fReader.onload = function () {
           var response = fReader.result;
 
           resolve(response);
@@ -14,8 +14,6 @@ export class convertToString {
         fReader.readAsDataURL(input);
       })
     }
-
-    return {readAsURL}
-
+    return { readAsURL }
   }
 }
