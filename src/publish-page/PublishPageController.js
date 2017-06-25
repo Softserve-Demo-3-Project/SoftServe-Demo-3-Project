@@ -1,32 +1,44 @@
 export default class PublishPageController {
-  constructor($scope, $http, $location, options, convertToString, adsService) {
+  constructor($scope, $location, options, convertToString, adsService, mapService, authenticationService) {
+    this.authenticationService = authenticationService;
+    this.mapService = mapService
+    this.adsService = adsService;
+    this.convertToString = convertToString;
+    this.options = options;
+    this.$scope = $scope;
+    this.$location = $location;
+    this.user = {};
 
-    $scope.options = options;
+    this.loadAutoComplate();
+  }
 
-    function loadAutoComplate(element) {
-      var inputFrom = document.getElementById('location');
+  sendData(data) {
+    this.convertToString.readAsURL(data.picture).then((res) => {
+      let userId = this.authenticationService.getCurrentUserId();
+      data.picture = res;
+      data.authorId = userId;
 
-      var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
-
-      google.maps.event.addListener(autocompleteFrom, 'place_changed', function() {
-        var place = autocompleteFrom.getPlace();
-        $scope.user.locationLat = place.geometry.location.lat();
-        $scope.user.locationLng = place.geometry.location.lng();
-        $scope.user.address = place.formatted_address;
-        $scope.$apply();
+      this.adsService.postAd(data)
+      .then(() => {
+        this.$location.path('#/home');
+        });
       });
     }
 
-    loadAutoComplate();
+    loadAutoComplate(element) {
+      let self = this;
+      var inputFrom = document.getElementById('location');
 
-    $scope.sendData = function(data) {
-      convertToString.readAsURL(data.image).then((res) => {
-        data.image = res;
-        adsService.postAd(data)
-        .then(() => {
-          $location.path('#/home');
-          });
+      this.mapService.loadScript().then(() => {
+        var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
 
+        google.maps.event.addListener(autocompleteFrom, 'place_changed', function() {
+          var place = autocompleteFrom.getPlace();
+          self.user.locationLat = place.geometry.location.lat();
+          self.user.locationLng = place.geometry.location.lng();
+          self.user.address = place.formatted_address;
+          self.$scope.$apply();
         });
-      }}
+      });
+    }
   }

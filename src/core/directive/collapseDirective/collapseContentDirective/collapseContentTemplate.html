@@ -1,6 +1,6 @@
 <div class="panel panel-default" data-startCollapsed="false" allow-multiple="true">
     <div class="panel-heading" role="tab">
-        
+
         <h4 class="panel-title"></h4>
             <a ng-hide="editing" style="cursor: pointer;">{{ header }}</a>
             <div ng-show="editing" class="input-group">
@@ -9,7 +9,7 @@
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" ng-click="bodyToggle()" bs-collapse-toggle>{{ bodyShowned ? 'Show less' : 'Show more'  }}</button>
                 <button type="button" class="btn btn-primary" bs-dropdown data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    ng-show="isLoggedIn() === body.author">
+                    ng-show="isLoggedIn() == body.authorId">
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">

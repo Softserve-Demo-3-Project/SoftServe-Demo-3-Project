@@ -1,5 +1,6 @@
 <div class="contentWrapper">
 
+
   <div class="filterWrapper flexbox">
     <div class="container-flud">
       <div class="row">
@@ -42,7 +43,8 @@
   <div class="mapWrapper flexbox">
     <div id="mapHolder">
 
-      <map ads="home.ads"></map>
+      <!--<map ads="home.ads"></map>-->
+      <map ng-if="home.ads.length > 0" ads="home.ads"></map>
 
     </div>
   </div>

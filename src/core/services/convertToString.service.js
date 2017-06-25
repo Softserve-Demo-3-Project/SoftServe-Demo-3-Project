@@ -5,15 +5,20 @@ export class convertToString {
     function readAsURL(input) {
       return new Promise((resolve, reject) => {
 
-        var fReader = new FileReader();
-        fReader.onload = function () {
-          var response = fReader.result;
+        if (input) {
+          var fReader = new FileReader();
+          fReader.onload = function () {
+            var response = fReader.result;
 
-          resolve(response);
-        };
-        fReader.readAsDataURL(input);
-      })
+            resolve(response);
+          };
+          fReader.readAsDataURL(input);
+        } else {
+          resolve();
+        }
+      });
     }
-    return { readAsURL }
+
+    return { readAsURL };
   }
 }
