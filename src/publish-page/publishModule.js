@@ -1,7 +1,5 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
-// import base64  from 'angular-base64';
-
 // import ngAnimate from 'angular-animate';
 
 import './publish-page.css';
@@ -21,7 +19,6 @@ export default angular
   })
 })
 .service('convertToString', convertToString)
-.service('mapService', mapService) //delete it
 .service('AdsService', AdsService)
 .directive('fileModel', fileModel)
 .value('options', [
