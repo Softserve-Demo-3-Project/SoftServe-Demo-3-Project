@@ -1,11 +1,10 @@
 export default class HomeController {
     /* @ngInject */
-    constructor(adsService, $rootScope, authenticationService) {
+    constructor(adsService, authenticationService) {
         this.ads = [];
         this.alert = {};
         this.adsService = adsService;
         this.authenticationService = authenticationService;
-        this.$rootScope = $rootScope;
         this.fetchAds = this.fetchAds.bind(this);
         this.onEdit = this.onEdit.bind(this);
         this.onDelete = this.onDelete.bind(this);
