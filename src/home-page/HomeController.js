@@ -1,6 +1,6 @@
 export default class HomeController {
     /* @ngInject */
-    constructor(adsService, authenticationService) {
+    constructor(adsService, authenticationService, $rootScope, $cookies, $location) {
         this.ads = [];
         this.alert = {};
         this.adsService = adsService;
@@ -9,7 +9,12 @@ export default class HomeController {
         this.onEdit = this.onEdit.bind(this);
         this.onDelete = this.onDelete.bind(this);
         this.fetchAds();
-        this.towns = ["all", "Emil", "Tobias", "Linus"];
+        this.types = ['all', '1 Room', '2 Room', '3 Room', 'House'];
+    }
+
+    checkForUser() {
+        // this.$cookies.getObject('globals') ? this.$location.path('/publish') : this.$location.path('/login');
+        this.$location.path('/publish')
     }
 
     fetchAds() {
