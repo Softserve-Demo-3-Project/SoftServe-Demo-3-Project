@@ -7,7 +7,7 @@
                 <input ng-model="header" type="text" class="form-control" />
             </div>
             <div class="btn-group">
-                <button type="button" class="btn btn-primary" bs-collapse-toggle>Show more</button>
+                <button type="button" class="btn btn-primary" ng-click="bodyToggle()" bs-collapse-toggle>{{ bodyShowned ? 'Show less' : 'Show more'  }}</button>
                 <button type="button" class="btn btn-primary" bs-dropdown data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                     ng-show="isLoggedIn() === body.author">
                     <span class="caret"></span>
@@ -20,7 +20,7 @@
             <div class="panel-collapse" role="tabpanel" bs-collapse-target animation>
                 <div class="panel-body">
                     <collapse-body ng-hide="editing" body="body"></collapse-body>
-                    <edit-field ng-show="editing" body="body" on-edit="onEdit"></edit-field>
+                    <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit"></edit-field>
                 </div>
             </div>
 

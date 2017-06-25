@@ -6,13 +6,21 @@ export default function () {
         scope: {
             header: "=",
             body: "=",
+            alert: "=",
             isLoggedIn: "&",
             onEdit: "=",
             onDelete: "&"
         },
         controller: function ($scope) {
+            $scope.editing = false;
+            $scope.bodyShowned = false;
+
             $scope.editingToggle = () => {
                 $scope.editing = !$scope.editing;
+            }
+
+            $scope.bodyToggle = () => {
+                $scope.bodyShowned = !$scope.bodyShowned;
             }
         }
     }

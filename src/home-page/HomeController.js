@@ -2,6 +2,7 @@ export default class HomeController {
     /* @ngInject */
     constructor(adsService, $rootScope) {
         this.ads = [];
+        this.alert = {};
         this.adsService = adsService;
         this.$rootScope = $rootScope;
         this.fetchAds = this.fetchAds.bind(this);
@@ -14,7 +15,6 @@ export default class HomeController {
     fetchAds() {
         this.adsService.getAds().then((res) => {
             this.ads = res.data;
-            // console.log(res)
         });
     }
 
@@ -23,12 +23,17 @@ export default class HomeController {
     }
 
     onEdit(query) {
-        this.adsService.updateAd(query);
+        this.adsService.updateAd(query).then((res) => {
+            if (res.status === 200) {
+                this.alert = { title: 'Success!', content: '', type: 'success' };
+            } else {
+                this.alert = { title: 'Error!', content: 'Cannot connect to server', type: 'success' };
+            }
+        });
     }
 
     onDelete(id) {
         this.adsService.deleteAd(id).then((res) => {
-            // console.log(res)
             this.fetchAds();
         });
     }
