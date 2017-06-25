@@ -4,10 +4,16 @@ export class adsService {
     this.$http = $http;
   }
 
+  getByType(type) {
+    return this.$http.get(`http://localhost:3000/ads?type=${type}`)
+      .then((res) => res)
+      .catch((err) => err);
+  }
+
   getAds() {
     return this.$http.get('http://localhost:3000/ads')
-    .then((res) => res)
-    .catch((err) => err);
+      .then((res) => res)
+      .catch((err) => err);
   }
 
   updateAd(query) {
@@ -15,10 +21,10 @@ export class adsService {
   }
 
   deleteAd(id) {
-     return this.$http.delete(`http://localhost:3000/ads/${id}`);
+    return this.$http.delete(`http://localhost:3000/ads/${id}`);
   }
 
-  postAd(body){
+  postAd(body) {
     return this.$http.post('http://localhost:3000/ads', body);
   }
 }
