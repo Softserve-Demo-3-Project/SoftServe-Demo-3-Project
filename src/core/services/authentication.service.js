@@ -7,15 +7,16 @@ export class AuthenticationService {
     this.base64 = new Base64();
   }
 
-  setCredentials(username, password) {
+  setCredentials(username, password, id) {
     var authdata = this.base64.encode(username + ':' + password);
 
     this.$rootScope.globals = {
       currentUser: {
         username: username,
-        authdata: authdata
+        authdata: authdata,
+        id: id
       }
-    };
+    }
 
     // set default auth header for http requests
     this.$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
@@ -26,6 +27,10 @@ export class AuthenticationService {
     this.$cookies.putObject('globals', this.$rootScope.globals, {
       expires: cookieExp
     });
+  }
+
+  getCurrentUserId() {
+    return this.$rootScope.globals.currentUser.id;
   }
 
   clearCredentials() {

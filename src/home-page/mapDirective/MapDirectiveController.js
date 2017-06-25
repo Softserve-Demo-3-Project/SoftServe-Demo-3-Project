@@ -13,8 +13,6 @@ console.log($scope);
             // console.log();
             mapService.initialize();
 
-        })
-
-
+        });
     }
 }

@@ -9,6 +9,7 @@ import './publish-page.css';
 import PublishPageController from './PublishPageController';
 import {mapService} from  '../core/services/map.service';
 import {adsService} from '../core/services/ads.service';
+import { AuthenticationService } from '../core/services/authentication.service.js';
 import {convertToString} from '../core/services/convertToString.service';
 import fileModel from '../core/directive/fileUpload/fileModel';
 
@@ -17,12 +18,14 @@ export default angular
 .config(function($routeProvider) {
   $routeProvider.when('/publish', {
     template: require('./publish-page.html'),
-    controller: PublishPageController
-  })
+    controller: PublishPageController,
+    controllerAs: 'publish'
+  });
 })
 .service('convertToString', convertToString)
 .service('mapService', mapService) //delete it
 .service('adsService', adsService)
+.service('authenticationService', AuthenticationService)
 .directive('fileModel', fileModel)
 .value('options', [
   {
