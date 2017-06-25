@@ -8,7 +8,7 @@ import './publish-page.css';
 
 import PublishPageController from './PublishPageController';
 import {mapService} from  '../core/services/map.service';
-import {AdsService} from '../core/services/adsService';
+import {adsService} from '../core/services/ads.service';
 import {convertToString} from '../core/services/convertToString.service';
 import fileModel from '../core/directive/fileUpload/fileModel';
 
@@ -22,7 +22,7 @@ export default angular
 })
 .service('convertToString', convertToString)
 .service('mapService', mapService) //delete it
-.service('AdsService', AdsService)
+.service('adsService', adsService)
 .directive('fileModel', fileModel)
 .value('options', [
   {

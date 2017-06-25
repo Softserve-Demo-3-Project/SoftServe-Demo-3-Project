@@ -1,8 +1,8 @@
 export default class HomeController {
     /* @ngInject */
-    constructor(AdsService, $rootScope) {
+    constructor(adsService, $rootScope) {
         this.ads = [];
-        this.AdsService = AdsService;
+        this.adsService = adsService;
         this.$rootScope = $rootScope;
         this.fetchAds = this.fetchAds.bind(this);
         this.onEdit = this.onEdit.bind(this);
@@ -12,7 +12,7 @@ export default class HomeController {
     }
 
     fetchAds() {
-        this.AdsService.getAds().then((res) => {
+        this.adsService.getAds().then((res) => {
             this.ads = res.data;
             console.log(res)
         });
@@ -23,11 +23,11 @@ export default class HomeController {
     }
 
     onEdit(query) {
-        this.AdsService.updateAd(query);
+        this.adsService.updateAd(query);
     }
 
     onDelete(id) {
-        this.AdsService.deleteAd(id).then((res) => {
+        this.adsService.deleteAd(id).then((res) => {
             console.log(res)
             this.fetchAds();
         });
