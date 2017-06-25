@@ -1,5 +1,5 @@
 export default class PublishPageController {
-  constructor($scope, $http, $location, options, convertToString, AdsService) {
+  constructor($scope, $http, $location, options, convertToString, adsService) {
 
     $scope.options = options;
 
@@ -22,7 +22,7 @@ export default class PublishPageController {
     $scope.sendData = function(data) {
       convertToString.readAsURL(data.image).then((res) => {
         data.image = res;
-        AdsService.postAd(data)
+        adsService.postAd(data)
         .then(() => {
           $location.path('#/home');
           });
