@@ -1,6 +1,7 @@
 <div class="panel panel-default" data-startCollapsed="false" allow-multiple="true">
     <div class="panel-heading" role="tab">
-        <h4 class="panel-title">
+
+        <h4 class="panel-title"></h4>
             <a ng-hide="editing" style="cursor: pointer;">{{ header }}</a>
             <div ng-show="editing" class="input-group">
                 <input ng-model="header" type="text" class="form-control" />
@@ -8,7 +9,7 @@
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" bs-collapse-toggle>Show more</button>
                 <button type="button" class="btn btn-primary" bs-dropdown data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-ng-show="isLoggedIn() === body.author">
+                    ng-show="isLoggedIn() == body.authorId">
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
@@ -22,5 +23,7 @@ ng-show="isLoggedIn() === body.author">
                     <edit-field ng-show="editing" body="body" on-edit="onEdit"></edit-field>
                 </div>
             </div>
+
+            <img class="img" src="{{ body.picture }}" alt="" width="auto" height="100">
     </div>
 </div>

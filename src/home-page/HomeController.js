@@ -1,8 +1,9 @@
 export default class HomeController {
     /* @ngInject */
-    constructor(AdsService, $rootScope) {
+    constructor(adsService, $rootScope, authenticationService) {
         this.ads = [];
-        this.AdsService = AdsService;
+        this.adsService = adsService;
+        this.authenticationService = authenticationService;
         this.$rootScope = $rootScope;
         this.fetchAds = this.fetchAds.bind(this);
         this.onEdit = this.onEdit.bind(this);
@@ -12,23 +13,23 @@ export default class HomeController {
     }
 
     fetchAds() {
-        this.AdsService.getAds().then((res) => {
+        this.adsService.getAds().then((res) => {
             this.ads = res.data;
-            console.log(res)
+            // console.log(res)
         });
     }
 
     isLoggedIn() {
-        return this.$rootScope.globals.currentUser ? this.$rootScope.globals.currentUser.username : false;
+        return this.authenticationService.getCurrentUserId();
     }
 
     onEdit(query) {
-        this.AdsService.updateAd(query);
+        this.adsService.updateAd(query);
     }
 
     onDelete(id) {
-        this.AdsService.deleteAd(id).then((res) => {
-            console.log(res)
+        this.adsService.deleteAd(id).then((res) => {
+            // console.log(res)
             this.fetchAds();
         });
     }

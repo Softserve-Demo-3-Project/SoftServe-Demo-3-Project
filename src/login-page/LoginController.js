@@ -27,7 +27,7 @@ export default class LoginController {
       if (data.length) {
         let user = data[0];
         _this.hasLoggedIn = true;
-        _this.authenticationService.setCredentials(username, password);
+        _this.authenticationService.setCredentials(username, password, user.id);
         _this.$location.path('/');
       } else {
         _this.hasFailed = true;

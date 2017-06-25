@@ -6,18 +6,14 @@ export class mapService {
 
             var deferred = $q.defer();
 
-            // Load Google map API script
             function load() {
 
                 var key = 'AIzaSyBQX5028KFM6LIkKepvRme8HTu0-etasO0';
-                // Use global document since Angular's $document is weak
                 var script = document.createElement('script');
                 script.src = `//maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&libraries=places`;
 
                 document.body.appendChild(script);
             }
-
-            // Script loaded callback, send resolve
             $window.initMap = function () {
                 deferred.resolve();
             }
@@ -27,23 +23,33 @@ export class mapService {
             return deferred.promise;
         }
 
-        function initialize() {
+        function initialize(ads) {
 
-            var coordinate = [{}];
+            var cities = ads
+                .filter(ad => ad.locationLat && ad.locationLng)
+                .map((ad) => ({ lat: ad.locationLat, long: ad.locationLng }));
 
-            var location = new google.maps.LatLng("48.833", "2.333");
+            // var coordinate = [{}];
 
             var mapOptions = {
-                zoom: 12,
-                center: location
+                zoom: 4,
+                // center: new google.maps.LatLng(cities[0].lat, cities[0].long)
+                center: new google.maps.LatLng(cities[0] && cities[0].lat, cities[0] && cities[0].long)
             };
 
             var map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
 
-            new google.maps.Marker({
-                position: location,
-                map: map
-            });
+            var createMarker = function (info, map) {
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(info.lat, info.long),
+                    map: map
+                });
+            }
+
+            for (let i = 0; i < cities.length; i++) {
+                createMarker(cities[i], map);
+            }
 
         }
 
@@ -51,7 +57,5 @@ export class mapService {
             loadScript,
             initialize
         }
-
     }
-
 }

@@ -1,4 +1,4 @@
-export class AdsService {
+export class adsService {
   /* @ngInject */
   constructor($http) {
     this.$http = $http;
