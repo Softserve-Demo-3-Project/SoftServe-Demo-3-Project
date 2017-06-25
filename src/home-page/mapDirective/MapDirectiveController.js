@@ -5,7 +5,7 @@ export default class MapDirectiveController {
 
 console.log($scope);
 
-console.log($scope.ads);
+// console.log($scope.ads);
 
         // Load map
         mapService.loadScript()
