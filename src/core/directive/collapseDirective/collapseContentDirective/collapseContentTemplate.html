@@ -1,7 +1,8 @@
-<div class="panel panel-default" data-startCollapsed="false" allow-multiple="true">
-    <div class="panel-heading" role="tab">
+<div class="panel-group" start-collapsed="true" role="tablist" allow-multiple="false" bs-collapse>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab">
 
-        <h4 class="panel-title"></h4>
+            <h4 class="panel-title"></h4>
             <a ng-hide="editing" style="cursor: pointer;">{{ header }}</a>
             <div ng-show="editing" class="input-group">
                 <input ng-model="header" type="text" class="form-control" />
@@ -17,7 +18,7 @@
                     <li><button ng-click="onDelete({id: body.id})">Delete</button></li>
                 </ul>
             </div>
-            <div class="panel-collapse" role="tabpanel" bs-collapse-target animation>
+            <div class="panel-collapse" role="tabpanel" bs-collapse-target>
                 <div class="panel-body">
                     <collapse-body ng-hide="editing" body="body"></collapse-body>
                     <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit"></edit-field>
@@ -25,5 +26,6 @@
             </div>
 
             <img class="img" src="{{ body.picture }}" alt="" width="auto" height="100">
+        </div>
     </div>
 </div>
