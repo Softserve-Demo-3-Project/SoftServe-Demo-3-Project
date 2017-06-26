@@ -2,6 +2,7 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngStrap from 'angular-strap';
 import ngCookies from 'angular-cookies';
+import ngSanitize from 'angular-sanitize';
 // import ngAnimate from 'angular-animate';
 
 
@@ -32,6 +33,7 @@ angular
     publishModule,
     ngStrap,
     ngCookies,
+    ngSanitize
     // ngAnimate
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {

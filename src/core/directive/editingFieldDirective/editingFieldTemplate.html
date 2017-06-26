@@ -1,6 +1,5 @@
-<form ng-submit="onEdit(body)">
+<form id="form-edit" ng-submit="onEdit(body)">
   <div id="alerts-container"></div>
-
   <div class="input-group">
     <label>Contacts</label>
     <input  ng-model="body.contacts" type="text" class="form-control" />
@@ -29,7 +28,6 @@
   <br/>
 
   <div class="input-group">
-    <input type="submit" class="form-control btn btn-primary" value="Save" container="form" duration="3" bs-alert="alert"
-    />
+    <input type="submit" class="form-control btn btn-primary" value="Save" container="div" placement="top"  duration="3" bs-alert="alert"/>
   </div>
 </form>

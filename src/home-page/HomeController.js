@@ -48,7 +48,7 @@ export default class HomeController {
             if (res.status === 200) {
                 this.alert = { title: 'Success!', content: '', type: 'success' };
             } else {
-                this.alert = { title: 'Error!', content: 'Cannot connect to server', type: 'success' };
+                this.alert = { title: 'Error!', content: 'Cannot connect to server', type: 'danger' };
             }
         });
     }
