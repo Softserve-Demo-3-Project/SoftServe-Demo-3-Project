@@ -21,7 +21,6 @@ export default angular
     });
   })
   .service('convertToString', convertToString)
-  .service('mapService', mapService) //delete it
   .service('adsService', adsService)
   .service('authenticationService', AuthenticationService)
   .directive('fileModel', fileModel)
