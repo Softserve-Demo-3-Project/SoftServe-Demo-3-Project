@@ -16,7 +16,7 @@
             ng-pattern="/^[^0-9]+$/" 
             ng-minlength="3"/>
 
-            <div ng-messages="registerForm.name.$error" ng-show="registerForm.name.$touched" style="color:maroon" role="alert">
+            <div ng-messages="registerForm.name.$error" ng-show="registerForm.name.$touched" style="color:red" role="alert">
                 <div ng-message="required">Name is required</div>
                 <div ng-message="minlength">Name must be at least 3 characters long</div>
                 <div ng-message="pattern">You can only use Latin and Cyryllic letters</div>
@@ -36,7 +36,7 @@
             ng-model="register.user.age" 
             ng-min="18"/>
 
-            <div ng-messages="registerForm.age.$error" ng-show="registerForm.age.$touched" style="color:maroon" role="alert">
+            <div ng-messages="registerForm.age.$error" ng-show="registerForm.age.$touched" style="color:red" role="alert">
                 <div ng-message="min">You must be at leats 18 years old</div>
                 <div ng-message="required">You must be at leats 18 years old</div>
             </div>
@@ -54,7 +54,7 @@
             ng-model="register.user.email" 
             ng-pattern="/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/"/>
             
-            <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched" style="color:maroon" role="alert">
+            <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched" style="color:red" role="alert">
                 <div ng-message="required">Valid Е-mail is required</div>
             </div>
         </div>
@@ -75,7 +75,7 @@
                 user-validator
                 ng-model-options="{debounce : {'default' : 1500}}"
             />
-            <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched" style="color:maroon" role="alert">
+            <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched" style="color:red" role="alert">
                 <div ng-message="minlength">Your Username must be between 7 and 20 characters long</div>
                 <div ng-message="required">Your Username must be between 7 and 20 characters long</div>
                 <div ng-message="userAvailable">This user already exists</div>
@@ -94,7 +94,7 @@
             ng-model="register.user.password"
             ng-minlength="7"/>
 
-            <div ng-messages="registerForm.password.$error" ng-show="registerForm.password.$touched" style="color:maroon" role="alert">
+            <div ng-messages="registerForm.password.$error" ng-show="registerForm.password.$touched" style="color:red" role="alert">
                 <div ng-message="minlength">Your Password must be at least 7 symbols long</div>
                 <div ng-message="required">Password required</div>
             </div>
@@ -117,7 +117,7 @@
             <div ng-show="register.user.confirmPassword.length > 0 && register.user.password !== register.user.confirmPassword">Password missmatch</div>
             <div ng-show="register.user.confirmPassword.length > 0 && register.user.password === register.user.confirmPassword">Password match</div>
 
-            <div ng-messages="registerForm.confirmPassword.$error" ng-show="registerForm.confirmPassword.$touched" style="color:maroon" role="alert">
+            <div ng-messages="registerForm.confirmPassword.$error" ng-show="registerForm.confirmPassword.$touched" style="color:red" role="alert">
                 <div ng-message="minlength">Your Password must be at least 7 symbols long</div>
                 <div ng-message="required">Password and Password Confirm are required</div>
             </div>
