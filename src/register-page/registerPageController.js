@@ -1,6 +1,5 @@
 export default class registerPageController {
   constructor(userService, authenticationService, $location) {
-    this.register = "Register";
     this.userService = userService;
     this.$location = $location;
     this.authenticationService = authenticationService;
