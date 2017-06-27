@@ -19,18 +19,16 @@ export default class PublishPageController {
       data.authorId = userId;
 
       this.adsService.postAd(data)
-      .then(() => {
-        this.$location.path('#/home');
+        .then(() => {
+          this.$location.path('#/home');
         });
-      });
-    }
+    });
+  }
 
-    loadAutoComplate(element) {
-      let self = this;
-      var inputFrom = document.getElementById('location');
-
-      this.mapService.loadScript().then(() => {
-        var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
+  loadAutoComplate(element) {
+    let self = this;
+    let inputFrom = document.getElementById('location');
+    let autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
 
         var options = {
             componentRestrictions: {
@@ -48,3 +46,4 @@ export default class PublishPageController {
       });
     }
   }
+}
