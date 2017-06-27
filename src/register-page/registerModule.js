@@ -25,7 +25,9 @@ export default angular
 
           var userInput = modelValue || viewValue;
           return $http.get('http://localhost:3000/users?username=' + userInput)
-            .then(function ({data}) {
+            .then(function ({
+              data
+            }) {
               //username exists, this means validation success
               if (data.length) {
                 throw new Error();
