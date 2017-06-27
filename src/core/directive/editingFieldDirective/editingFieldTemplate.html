@@ -2,12 +2,12 @@
   <div id="alerts-container"></div>
   <div class="input-group">
     <label>Contacts</label>
-    <input  ng-model="body.contacts" type="text" class="form-control" />
+    <input  ng-model="body.contacts" type="text" class="form-control" required />
   </div>
 
   <div class="input-group">
     <label>Type</label>
-    <select name="" id="" ng-model="body.type" class="form-control">
+    <select ng-model="body.type" class="form-control" required>
       <option value="1 Room">1 Room</option>
       <option value="2 Room">2 Room</option>
       <option value="3 Room">3 Room</option>
@@ -17,17 +17,17 @@
 
   <div class="input-group">
     <label>Price</label>
-    <input ng-model="body.price" type="number" class="form-control" />
+    <input ng-model="body.price" type="number" class="form-control" required />
   </div>
 
   <div class="input-group">
     <label>Description</label>
-    <input ng-model="body.description" type="text" class="form-control" />
+    <input ng-model="body.description" type="text" class="form-control" required />
   </div>
 
   <div class="input-group">
     <label>Address</label>
-    <input ng-model="body.address" type="text" class="form-control" />
+    <input ng-model="body.address" type="text" class="form-control" required />
   </div>
 
   <br/>
