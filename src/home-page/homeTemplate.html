@@ -16,7 +16,11 @@
           <select ng-model="typeValue" ng-required="true" class="form-control" id="types">
              <option ng-repeat="type in home.types">{{type}}</option>
           </select>
-          <button ng-click="home.searchByType(typeValue)" class="btn btn-primary btn-publishing">search</button>
+
+          <label for="price" >Price</label>
+          <input type="text" id="price" class="form-control" ng-model="priceValue"></input>
+
+          <button ng-click="home.searchByType(typeValue, priceValue)" class="btn btn-primary btn-publishing top-20" >search</button>
         </div>
       </div>
     </div>

@@ -16,8 +16,7 @@ export default class HomeController {
         this.$http = $http;
     }
 
-    searchByType(type) {
-
+    searchByType(type, price) {
         if (type === 'all') {
             this.adsService.getAds().then((res) => {
                 this.ads = res.data;
@@ -25,7 +24,7 @@ export default class HomeController {
                 this.mapService.initialize(this.ads);
             });
         } else {
-            this.adsService.getByType(type).then((res) => {
+            this.adsService.getSort(type, price).then((res) => {
                 this.ads = res.data;
             }).then(() => {
                 this.mapService.initialize(this.ads);
