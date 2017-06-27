@@ -5,7 +5,7 @@ import ngRoute from 'angular-route';
 import './publish-page.css';
 
 import PublishPageController from './PublishPageController';
-import { mapService } from '../core/services/map.service';
+
 import { adsService } from '../core/services/ads.service';
 import { AuthenticationService } from '../core/services/authentication.service.js';
 import { convertToString } from '../core/services/convertToString.service';

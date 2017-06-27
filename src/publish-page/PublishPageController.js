@@ -32,7 +32,13 @@ export default class PublishPageController {
       this.mapService.loadScript().then(() => {
         var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
 
-        google.maps.event.addListener(autocompleteFrom, 'place_changed', function() {
+        var options = {
+            componentRestrictions: {
+                country: 'BG'
+            }
+        };
+
+        google.maps.event.addListener(autocompleteFrom, options, 'place_changed', function() {
           var place = autocompleteFrom.getPlace();
           self.user.locationLat = place.geometry.location.lat();
           self.user.locationLng = place.geometry.location.lng();
