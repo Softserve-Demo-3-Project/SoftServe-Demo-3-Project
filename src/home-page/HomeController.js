@@ -1,9 +1,10 @@
 export default class HomeController {
     /* @ngInject */
-    constructor(adsService, authenticationService, $rootScope, $cookies, $location, $http) {
+    constructor(adsService, authenticationService, $rootScope, $cookies, $location, $http, mapService) {
         this.ads = [];
         this.alert = {};
         this.adsService = adsService;
+        this.mapService = mapService;
         this.authenticationService = authenticationService;
         this.fetchAds = this.fetchAds.bind(this);
         this.onEdit = this.onEdit.bind(this);
@@ -20,22 +21,27 @@ export default class HomeController {
         if (type === 'all') {
             this.adsService.getAds().then((res) => {
                 this.ads = res.data;
+            }).then(() => {
+                this.mapService.initialize(this.ads);
             });
         } else {
             this.adsService.getByType(type).then((res) => {
                 this.ads = res.data;
+            }).then(() => {
+                this.mapService.initialize(this.ads);
             });
         }
     }
 
     checkForUser() {
-        // this.$cookies.getObject('globals') ? this.$location.path('/publish') : this.$location.path('/login');
         this.$location.path('/publish')
     }
 
     fetchAds() {
         this.adsService.getAds().then((res) => {
             this.ads = res.data;
+        }).then(() => {
+            this.mapService.initialize(this.ads);
         });
     }
 

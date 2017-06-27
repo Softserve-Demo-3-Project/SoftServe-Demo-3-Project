@@ -3,17 +3,10 @@ import ngRoute from 'angular-route';
 import ngStrap from 'angular-strap';
 import ngCookies from 'angular-cookies';
 import ngSanitize from 'angular-sanitize';
-// import ngAnimate from 'angular-animate';
-
-
 import ngMessages from 'angular-messages';
 
 import 'bootstrap/dist/css/bootstrap.css';
-// import 'angular/angular-csp.css';
-
 import './index.scss';
-
-// import demoModule from './demo/demoModule';
 
 import homeModule from './home-page/homeModule';
 import loginModule from './login-page/loginModule';
@@ -22,6 +15,8 @@ import publishModule from './publish-page/publishModule';
 import navigationDirective from './core/directive/navigation/navigationDirective';
 import { UserService } from './core/services/user.service';
 import { AuthenticationService } from './core/services/authentication.service';
+
+import mapLoadDirective from './core/directive/mapLoad/mapLoadDirective';
 
 angular
   .module('main', [
@@ -50,6 +45,7 @@ angular
       });
   }])
   .directive("navigation", navigationDirective)
+  .directive("mapLoad", mapLoadDirective)
   .run(['$rootScope', '$location', '$cookies', '$http',
         function ($rootScope, $location, $cookies, $http) {
             // keep user logged in after page refresh

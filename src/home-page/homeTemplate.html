@@ -6,16 +6,12 @@
       <div class="row">
         <div class="col-lg-12">
           <button ng-click="home.checkForUser()" class="btn btn-primary btn-publishing">publish</button>
-          <!--<a href="#/publish" class="btn btn-primary btn-publishing">publish</a>-->
         </div>
       </div>
 
-      <!---->
       <div class="search-article-header">Search by:</div>
-
       <div class="row">
         <div class="col-lg-12">
-
           <label for="types">Types</label>
           <select ng-model="typeValue" ng-required="true" class="form-control" id="types">
              <option ng-repeat="type in home.types">{{type}}</option>
@@ -23,11 +19,8 @@
           <button ng-click="home.searchByType(typeValue)" class="btn btn-primary btn-publishing">search</button>
         </div>
       </div>
-
     </div>
   </div>
-  <!---->
-
 
   <div class="pageMainContentWrapper flexbox">
     <label for="order-select">Sort By:</label>
@@ -53,6 +46,8 @@
 
       <!--<map ads="home.ads"></map>-->
       <map ng-if="home.ads.length > 0" ads="home.ads"></map>
+
+      <div id="gmap"></div>
 
     </div>
   </div>
