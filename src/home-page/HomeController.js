@@ -33,7 +33,9 @@ export default class HomeController {
     }
 
     checkForUser() {
-        this.$location.path('/publish')
+        // console.log(this.$cookies.getObject('globals'));
+
+        this.$cookies.getObject('globals') ? this.$location.path('/publish') : this.$location.path('/login')
     }
 
     fetchAds() {
