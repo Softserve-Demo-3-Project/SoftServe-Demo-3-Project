@@ -6,64 +6,74 @@ li,
 nav,
 p,
 ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color: rgb(234, 234, 234);
+    background-color: rgb(234, 234, 234);
+    padding-top: 50px;
+}
 
+hr {
+    border-top: 1px solid #ddd;
 }
 
 .top {
-  position: fixed;
-  z-index: 1;
-  margin: 20px;
-  background-color: #16a085;
-  color: #fff;
+    position: fixed;
+    z-index: 1;
+    margin: 20px;
+    background-color: #16a085;
+    color: #fff;
 }
 
 .dropdown-menu {
-  text-align: left;
-  padding: 0;
-  border-radius: 4px;
+    text-align: left;
+    padding: 0;
+    border-radius: 4px;
 }
 
-.dropdown-menu > li > button {
-  font-weight: normal;
-  line-height: 1.42857143;
-  color: #333;
-  white-space: nowrap;
-  outline:none !important;
-  border: none; 
-  background-color: white;
-  text-align:left;
-  padding: 5px 20px;
-  width: 100%;
-}
-.dropdown-menu > li > button:hover,
-.dropdown-menu > li > button:focus {
-  color: #262626;
-  text-decoration: none;
-  background-color: #f5f5f5;
-}
-.dropdown-menu > .active > button,
-.dropdown-menu > .active > button:hover,
-.dropdown-menu > .active > button:focus {
-  color: #fff;
-  text-decoration: none;
-  background-color: #337ab7;
-  outline: 0;
+.dropdown-menu>li>button {
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    outline: none !important;
+    border: none;
+    background-color: white;
+    text-align: left;
+    padding: 5px 20px;
+    width: 100%;
 }
 
-.search-article-header{
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
+.dropdown-menu>li>button:hover,
+.dropdown-menu>li>button:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
 }
 
-.user-img{
-  margin-top: 15%;
-  border-radius: 50%;
+.dropdown-menu>.active>button,
+.dropdown-menu>.active>button:hover,
+.dropdown-menu>.active>button:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #337ab7;
+    outline: 0;
+}
+
+.search-article-header {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.user-img {
+    margin-top: 15%;
+    border-radius: 50%;
+}
+
+.btn-group {
+    float: right;
 }

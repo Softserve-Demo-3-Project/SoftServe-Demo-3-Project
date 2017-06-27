@@ -5,6 +5,7 @@
                 <a ng-hide="editing" style="cursor: default; text-decoration: none;">{{ header }}</a>
             </h4>
             <hr/>
+            <img class="img" src="{{ body.picture }}" alt="" width="auto" height="100">
             <div ng-show="editing" class="input-group">
                 <input ng-model="header" type="text" class="form-control" />
             </div>
@@ -25,7 +26,7 @@
                     <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit"></edit-field>
                 </div>
             </div>
-            <img class="img" src="{{ body.picture }}" alt="" width="auto" height="100">
+            <!--<img class="img" src="{{ body.picture }}" alt="" width="auto" height="100">-->
         </div>
     </div>
 </div>

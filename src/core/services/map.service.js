@@ -15,8 +15,7 @@ export class mapService {
 
             var mapOptions = {
                 zoom: 7,
-                center: new google.maps.LatLng(42.1500000, 24.7500000)
-                // center: new google.maps.LatLng(cities[0] && cities[0].lat, cities[0] && cities[0].long)
+                center: new google.maps.LatLng(42.1500000, 25.4500000)
             };
 
             var map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
@@ -32,7 +31,6 @@ export class mapService {
                         '<div>' + 'Address:' + des.address + '</div>');
                     infoWindow.open(map, marker);
                 });
-
             }
 
             for (let i = 0; i < cities.length; i++) {
