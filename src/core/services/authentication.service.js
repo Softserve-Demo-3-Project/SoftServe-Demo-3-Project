@@ -30,7 +30,7 @@ export class AuthenticationService {
   }
 
   getCurrentUserId() {
-    return this.$rootScope.globals.currentUser.id;
+    return this.$rootScope.globals.currentUser ? this.$rootScope.globals.currentUser.id : false;
   }
 
   clearCredentials() {
