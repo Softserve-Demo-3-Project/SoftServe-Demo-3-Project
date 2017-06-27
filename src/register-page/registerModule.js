@@ -1,7 +1,7 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
 
-import './register-page.css';
+import './register-page.scss';
 
 import registerPageController from './registerPageController';
 
