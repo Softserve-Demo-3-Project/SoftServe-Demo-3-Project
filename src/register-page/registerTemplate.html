@@ -112,7 +112,7 @@
              ng-minlength="7"/>
 
       <div ng-show="register.user.confirmPassword.length > 0 && register.user.password !== register.user.confirmPassword" style="color:red" role="alert">Password missmatch</div>
-      <div ng-show="register.user.confirmPassword.length > 0 && register.user.password === register.user.confirmPassword" role="alert">Password match</div>
+      <div ng-show="register.user.confirmPassword.length > 0 && register.user.password === register.user.confirmPassword" style="color:green" role="alert">Password match</div>
 
       <div ng-messages="registerForm.confirmPassword.$error" ng-show="registerForm.confirmPassword.$touched" style="color:red" role="alert">
         <div ng-message="minlength">Your Password must be at least 7 characters long</div>
