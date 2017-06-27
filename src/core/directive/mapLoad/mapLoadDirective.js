@@ -1,4 +1,3 @@
-
 export default function mapLoad($parse) {
     return {
         restrict: 'E',

@@ -13,10 +13,9 @@ import loginModule from './login-page/loginModule';
 import registerModule from './register-page/registerModule';
 import publishModule from './publish-page/publishModule';
 import navigationDirective from './core/directive/navigation/navigationDirective';
+import mapLoadDirective from './core/directive/mapLoad/mapLoadDirective';
 import { UserService } from './core/services/user.service';
 import { AuthenticationService } from './core/services/authentication.service';
-
-import mapLoadDirective from './core/directive/mapLoad/mapLoadDirective';
 
 angular
   .module('main', [
@@ -29,7 +28,6 @@ angular
     ngStrap,
     ngCookies,
     ngSanitize
-    // ngAnimate
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
