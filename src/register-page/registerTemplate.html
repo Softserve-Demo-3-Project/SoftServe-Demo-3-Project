@@ -70,13 +70,13 @@
              required="" 
              placeholder="* Username"               
              ng-model="register.user.username"
-             ng-pattern="/^[A-Za-z0-9_]{7,20}$/" 
+             ng-pattern="/^[A-Za-z0-9_]{5,20}$/" 
              user-validator 
              ng-model-options="{ getterSetter : true, updateOn: 'default blur', debounce: { 'default': 300, 'blur': 0 } }"/>
 
      <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched && !registerForm.$pristine" style="color:red" role="alert">
         <div ng-message="userAvailable">This user already exists</div>
-        <div ng-message="pattern">Username must be between 7 and 20 alphanumeric characters long</div>
+        <div ng-message="pattern">Username must be between 5 and 20 alphanumeric characters long</div>
         <div ng-message="required && !registerForm.username.$pending.userAvailable">Username required</div>
       </div>
     </div>
