@@ -37,9 +37,4 @@ export class mapService {
             createMarker(cities[i], description[i], map);
         }
     }
-
-    // return {
-    //     initialize
-    // }
-    // }
 }
