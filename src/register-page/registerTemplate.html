@@ -1,6 +1,6 @@
 <div class="container main-content">
 
-  <form class="registrationForm" 
+  <form class="registrationForm"
         name="registerForm" 
         ng-submit="register.onSubmit(register.user)" 
         novalidate="novalidate">
@@ -72,12 +72,12 @@
              ng-model="register.user.username"
              ng-pattern="/^[A-Za-z0-9_]{7,20}$/" 
              user-validator 
-             ng-model-options="{debounce : {'default' : 500}}"/>
+             ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 600, 'blur': 500 } }"/>
 
-      <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched" style="color:red" role="alert">
-        <div ng-message="required">Username must be between 7 and 20 alphanumeric characters long</div>
-        <div ng-message="pattern">Username must be between 7 and 20 alphanumeric characters long</div>
+     <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched && !registerForm.$pristine" style="color:red" role="alert">
         <div ng-message="userAvailable">This user already exists</div>
+        <div ng-message="pattern">Username must be between 7 and 20 alphanumeric characters long</div>
+        <div ng-message="required && !registerForm.username.$pending.userAvailable">Username required</div>
       </div>
     </div>
 
