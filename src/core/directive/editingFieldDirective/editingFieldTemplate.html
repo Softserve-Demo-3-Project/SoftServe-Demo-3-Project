@@ -1,37 +1,38 @@
-<form ng-submit="onEdit(body)">
+<form id="form-edit" ng-submit="onEdit(body)">
+  <div id="alerts-container"></div>
   <div class="input-group">
-    <label for="authorInput">Type</label>
-    <input id="authorInput" ng-model="body.type" type="text" class="form-control" />
+    <label>Contacts</label>
+    <input  ng-model="body.contacts" type="text" class="form-control" required />
   </div>
 
   <div class="input-group">
-    <label for="authorInput">Guests</label>
-    <input id="authorInput" ng-model="body.guests" type="number" class="form-control" />
+    <label>Type</label>
+    <select ng-model="body.type" class="form-control" required>
+      <option value="1 Room">1 Room</option>
+      <option value="2 Room">2 Room</option>
+      <option value="3 Room">3 Room</option>
+      <option value="House">House</option>
+    </select>
   </div>
 
   <div class="input-group">
-    <label for="authorInput">Price</label>
-    <input id="authorInput" ng-model="body.prise" type="number" class="form-control" />
+    <label>Price</label>
+    <input ng-model="body.price" type="number" class="form-control" required />
   </div>
 
   <div class="input-group">
-    <label for="authorInput">Description</label>
-    <input id="authorInput" ng-model="body.description" type="text" class="form-control" />
+    <label>Description</label>
+    <input ng-model="body.description" type="text" class="form-control" required />
   </div>
 
   <div class="input-group">
-    <label for="authorInput">Location</label>
-    <input id="authorInput" ng-model="body.location" type="text" class="form-control" />
-  </div>
-
-  <div class="input-group">
-    <label for="authorInput">Beds</label>
-    <input id="authorInput" ng-model="body.bed" type="number" class="form-control" />
+    <label>Address</label>
+    <input ng-model="body.address" type="text" class="form-control" required />
   </div>
 
   <br/>
 
   <div class="input-group">
-    <input type="submit" class="form-control btn btn-primary" value="Save" />
+    <input type="submit" class="form-control btn btn-primary" value="Save" container="div" placement="top"  duration="3" bs-alert="alert"/>
   </div>
 </form>

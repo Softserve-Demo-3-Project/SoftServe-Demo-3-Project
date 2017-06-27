@@ -1,39 +1,44 @@
 @media (min-width: 768px) {
-  .navbar-header {
-    float: right !important;
-  }
+    .navbar-header {
+        float: right !important;
+    }
 }
 
 .nav-btn {
-  padding: 0;
-  margin-right: 5px;
+    padding: 0;
+    margin-right: 5px;
 }
 
-.nav-btn a{
-  color: white !important;
+.nav-btn a {
+    color: white !important;
 }
 
-.nav-btn:hover{
-  background-color: rgb(53, 73, 107);
+.nav-btn:hover {
+    background-color: rgb(53, 73, 107);
 }
 
-
-
-.navigation-right{
-  float: right;
+.navigation-right {
+    float: right;
 }
 
-.navbar{
-  margin-bottom: 0 !important;
-  background-color: rgb(47, 60, 83);
-  color: white;
+.navbar {
+    margin-bottom: 0 !important;
+    background-color: rgb(47, 60, 83);
+    color: white;
 }
 
-.navigation-left a{
-  color: white !important;
-  cursor:pointer;
+.navigation-left a {
+    color: white !important;
+    cursor: pointer;
 }
 
-.navigation-left a:hover{
-  color: rgb(181, 188, 237) !important;
+.navigation-left a:hover {
+    color: rgb(181, 188, 237) !important;
+}
+
+.navbar-brand {
+    color: white !important;
+     &:hover {
+        text-decoration: underline;
+    }
 }

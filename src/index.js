@@ -2,23 +2,18 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngStrap from 'angular-strap';
 import ngCookies from 'angular-cookies';
-// import ngAnimate from 'angular-animate';
-
-
+import ngSanitize from 'angular-sanitize';
 import ngMessages from 'angular-messages';
 
 import 'bootstrap/dist/css/bootstrap.css';
-// import 'angular/angular-csp.css';
-
 import './index.scss';
-
-// import demoModule from './demo/demoModule';
 
 import homeModule from './home-page/homeModule';
 import loginModule from './login-page/loginModule';
 import registerModule from './register-page/registerModule';
 import publishModule from './publish-page/publishModule';
 import navigationDirective from './core/directive/navigation/navigationDirective';
+import mapLoadDirective from './core/directive/mapLoad/mapLoadDirective';
 import { UserService } from './core/services/user.service';
 import { AuthenticationService } from './core/services/authentication.service';
 
@@ -32,7 +27,7 @@ angular
     publishModule,
     ngStrap,
     ngCookies,
-    // ngAnimate
+    ngSanitize
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
@@ -48,6 +43,7 @@ angular
       });
   }])
   .directive("navigation", navigationDirective)
+  .directive("mapLoad", mapLoadDirective)
   .run(['$rootScope', '$location', '$cookies', '$http',
         function ($rootScope, $location, $cookies, $http) {
             // keep user logged in after page refresh

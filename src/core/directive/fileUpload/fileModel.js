@@ -1,5 +1,3 @@
-// don't delete
-
 export default function fileModel($parse){
   return {
 		restrict: 'A',

@@ -1,27 +1,33 @@
 <div class="contentWrapper">
 
+
   <div class="filterWrapper flexbox">
     <div class="container-flud">
       <div class="row">
         <div class="col-lg-12">
-          <a href="#/publish" class="btn btn-primary btn-publishing">publish</a>
+          <button ng-click="home.checkForUser()" class="btn btn-primary btn-publishing">publish</button>
         </div>
       </div>
 
-
+      <div class="search-article-header">Search by:</div>
       <div class="row">
         <div class="col-lg-12">
-          
+          <label for="types">Types</label>
+          <select ng-model="typeValue" ng-required="true" class="form-control" id="types">
+             <option ng-repeat="type in home.types">{{type}}</option>
+          </select>
 
-          
+          <label for="price" >Price</label>
+          <input type="text" id="price" class="form-control" ng-model="priceValue"></input>
+
+          <button ng-click="home.searchByType(typeValue, priceValue)" class="btn btn-primary btn-publishing top-20" >search</button>
         </div>
       </div>
-
     </div>
   </div>
 
   <div class="pageMainContentWrapper flexbox">
-    <label for="order-select">Order By:</label>
+    <label for="order-select">Sort By:</label>
     <div class="row">
       <div class="col-md-3">
         <select id="order-select" class="form-control" ng-model="sortBy">
@@ -33,8 +39,8 @@
     </div>
     <br/>
     <div class="panel-group" aria-multiselectable="true" start-collapsed="true" role="tablist" bs-collapse>
-      <collapse-content ng-repeat="ad in home.ads | orderBy: sortBy" is-logged-in="home.isLoggedIn()" on-edit="home.onEdit" on-delete="home.onDelete(id)"
-        header="ad.title" body="ad"></collapse-content>
+      <collapse-content alert="home.alert" ng-repeat="ad in home.ads | orderBy: sortBy" is-logged-in="home.isLoggedIn()" on-edit="home.onEdit"
+        on-delete="home.onDelete(id)" header="ad.title" body="ad"></collapse-content>
     </div>
   </div>
 
@@ -42,7 +48,10 @@
   <div class="mapWrapper flexbox">
     <div id="mapHolder">
 
-      <map ads="home.ads"></map>
+      <!--<map ads="home.ads"></map>-->
+      <map ng-if="home.ads.length > 0" ads="home.ads"></map>
+
+      <div id="gmap"></div>
 
     </div>
   </div>

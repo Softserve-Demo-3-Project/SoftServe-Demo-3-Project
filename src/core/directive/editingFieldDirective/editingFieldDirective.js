@@ -3,6 +3,7 @@ export default function () {
     restrict: "E",
     scope: {
       body: "=",
+      alert: "=",
       onEdit: "="
     },
     template: require('./editingFieldTemplate.html')

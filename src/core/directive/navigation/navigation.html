@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
 				<span class="sr-only">Toggwle navigation</span>
@@ -29,9 +29,25 @@
     <div class="nav navbar-nav pull-right" ng-if="nav.isLogged()">
       <ul class="nav navbar-nav navigation-left">
         <li class="nav-btn">
-          <a ng-click="nav.logout()">LOGOUT</a>
+          <img class="user-img" src="http://www.seaaroundus.org/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="" width="40"
+            height="auto">
+
         </li>
       </ul>
     </div>
+
+    <div class="nav navbar-nav pull-right" ng-if="nav.isLogged()">
+      <ul class="nav navbar-nav navigation-left">
+        <li class="nav-btn">
+          <a ng-click="nav.logout()">LOGOUT</a>
+
+        </li>
+      </ul>
+    </div>
+
+
+
+
+
   </div>
 </nav>

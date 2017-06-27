@@ -18,27 +18,30 @@ export default class PublishPageController {
       data.picture = res;
       data.authorId = userId;
 
-      this.adsService.postAd(data)
-      .then(() => {
+      this.adsService.postAd(data).then(() => {
         this.$location.path('#/home');
-        });
       });
-    }
-
-    loadAutoComplate(element) {
-      let self = this;
-      var inputFrom = document.getElementById('location');
-
-      this.mapService.loadScript().then(() => {
-        var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
-
-        google.maps.event.addListener(autocompleteFrom, 'place_changed', function() {
-          var place = autocompleteFrom.getPlace();
-          self.user.locationLat = place.geometry.location.lat();
-          self.user.locationLng = place.geometry.location.lng();
-          self.user.address = place.formatted_address;
-          self.$scope.$apply();
-        });
-      });
-    }
+    });
   }
+
+  loadAutoComplate(element) {
+    let self = this;
+    let inputFrom = document.getElementById('location');
+    let autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
+
+    var options = {
+      componentRestrictions: {
+        country: 'BG'
+      }
+    };
+
+
+    google.maps.event.addListener(autocompleteFrom, options, 'place_changed', function () {
+      var place = autocompleteFrom.getPlace();
+      self.user.locationLat = place.geometry.location.lat();
+      self.user.locationLng = place.geometry.location.lng();
+      self.user.address = place.formatted_address;
+      self.$scope.$apply();
+    });
+  }
+}
