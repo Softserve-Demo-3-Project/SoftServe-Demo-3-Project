@@ -18,11 +18,11 @@ form.registrationForm ::-webkit-input-placeholder {
   font-weight: bold;
 }
 
-form.registrationForm div.form-group input {
+/*form.registrationForm div.form-group input {
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 0px 0px #000;
   background-color: #fff;
-}
+}*/
 
 form.registrationForm button {
   width: 100%;

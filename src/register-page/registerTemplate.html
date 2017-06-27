@@ -19,7 +19,7 @@
             <div ng-messages="registerForm.name.$error" ng-show="registerForm.name.$touched" style="color:red" role="alert">
                 <div ng-message="required">Name is required</div>
                 <div ng-message="minlength">Name must be at least 3 characters long</div>
-                <div ng-message="pattern">You can only use Latin and Cyryllic letters</div>
+                <div ng-message="pattern">You can only use Latin and Cyrillic letters</div>
             </div>
         </div>
 
@@ -137,7 +137,7 @@
                 !registerForm.password.$valid ||
                 !registerForm.confirmPassword.$valid ||
                 (register.user.password !== register.user.confirmPassword)">
-            Register
+            Create account
             </button>
         </div>
 
