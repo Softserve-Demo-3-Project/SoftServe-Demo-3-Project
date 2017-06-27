@@ -1,9 +1,9 @@
-<div class="panel-group" start-collapsed="true" role="tablist" allow-multiple="false" bs-collapse>
+<div class="panel-group" start-collapsed="true" role="tablist" allow-multiple="true" bs-collapse>
     <div class="panel panel-default">
         <div class="panel-heading" role="tab">
-
-            <h4 class="panel-title"></h4>
-            <a ng-hide="editing" style="cursor: pointer;">{{ header }}</a>
+            <h4 class="panel-title">
+                <a ng-hide="editing" style="cursor: default; text-decoration: none;">{{ header }}</a>
+            </h4>
             <div ng-show="editing" class="input-group">
                 <input ng-model="header" type="text" class="form-control" />
             </div>
@@ -24,7 +24,6 @@
                     <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit"></edit-field>
                 </div>
             </div>
-
             <img class="img" src="{{ body.picture }}" alt="" width="auto" height="100">
         </div>
     </div>
