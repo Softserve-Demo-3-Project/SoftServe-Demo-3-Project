@@ -17,16 +17,16 @@ export default class registerPageController {
       confirmPassword
     } = user;
     self.userService.register(name, age, email, username, password).then((res) => {
-        self.userService.login(username, password).then(function (response) {
-          let data = response.data;
+      self.userService.login(username, password).then(function (response) {
+        let data = response.data;
 
-          if (data.length) {
-            let user = data[0];
-            self.hasLoggedIn = true;
-            self.authenticationService.setCredentials(username, password);
-            self.$location.path('/');
-          }
-        });
-      })
+        if (data.length) {
+          let user = data[0];
+          self.hasLoggedIn = true;
+          self.authenticationService.setCredentials(username, password);
+          self.$location.path('/');
+        }
+      });
+    })
   }
 }
