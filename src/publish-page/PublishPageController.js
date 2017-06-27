@@ -35,20 +35,13 @@ export default class PublishPageController {
       }
     };
 
-<<<<<<< HEAD
+
     google.maps.event.addListener(autocompleteFrom, options, 'place_changed', function () {
-=======
-    google.maps.event.addListener(autocompleteFrom, options, 'place_changed', function() {
->>>>>>> 03a85c55a8f24fba8693a26dec433b1265e8c6c7
       var place = autocompleteFrom.getPlace();
       self.user.locationLat = place.geometry.location.lat();
       self.user.locationLng = place.geometry.location.lng();
       self.user.address = place.formatted_address;
       self.$scope.$apply();
     });
-<<<<<<< HEAD
   }
-=======
-  };
->>>>>>> 03a85c55a8f24fba8693a26dec433b1265e8c6c7
 }
