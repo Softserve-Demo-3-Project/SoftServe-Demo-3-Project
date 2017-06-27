@@ -20,7 +20,7 @@
                     <li><button ng-click="onDelete({id: body.id})">Delete</button></li>
                 </ul>
             </div>
-            <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+            <div class="panel-collapse" role="tabpanel" animation=".collapse" bs-collapse-target>
                 <div class="panel-body">
                     <collapse-body ng-hide="editing" body="body"></collapse-body>
                     <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit"></edit-field>

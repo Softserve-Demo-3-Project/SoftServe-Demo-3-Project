@@ -77,3 +77,29 @@ hr {
 .btn-group {
     float: right;
 }
+
+@keyframes expand {
+  from { max-height: 0; }
+  to { max-height: 500px; }
+}
+
+@keyframes collapse {
+  from { max-height: 500px; }
+  to { max-height: 0; }
+}  
+
+.collapse.am-collapse {
+  animation-duration: .5s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+  overflow: hidden;
+}
+
+  .collapse.am-collapse.in-remove {
+    animation-name: collapse;
+    display: block;
+  }
+
+  .collapse.am-collapse.in-add {
+    animation-name: expand;
+  }

@@ -4,6 +4,7 @@ import ngStrap from 'angular-strap';
 import ngCookies from 'angular-cookies';
 import ngSanitize from 'angular-sanitize';
 import ngMessages from 'angular-messages';
+import ngAnimate from 'angular-animate';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.scss';
@@ -27,7 +28,8 @@ angular
     publishModule,
     ngStrap,
     ngCookies,
-    ngSanitize
+    ngSanitize,
+    ngAnimate
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
