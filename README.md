@@ -5,7 +5,6 @@ Part of SoftServe academy [WEB-UI](https://softserve.ua/bg/university/it-academy
 ### Usage
 
 1. Install dependencies `npm i`
-2. Start JSON-server `npm run server`
-3. Build and run dev pack with `npm run build-dev-run`
+2. Run `npm start`
 3. Go to http://localhost:2992/
 
