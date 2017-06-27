@@ -66,9 +66,9 @@
                 name="username"
                 id="username"
                 required=""
-                placeholder="* Username"
-                ng-minlength="5"
+                placeholder="* Username"                
                 class="form-control"
+                ng-minlength="5"
                 ng-model="register.user.username"
                 ng-pattern="/^[A-Za-z0-9_]{1,32}$/"
                 ng-minlength="7"
@@ -76,8 +76,9 @@
                 ng-model-options="{debounce : {'default' : 1500}}"
             />
             <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched" style="color:red" role="alert">
-                <div ng-message="minlength">Your Username must be between 7 and 20 characters long</div>
-                <div ng-message="required">Your Username must be between 7 and 20 characters long</div>
+                <div ng-message="minlength">Username must be between 7 and 20 characters long and must not include scecial characters and symbols such as `!@#$%^&*()_+</div>
+                <div ng-message="required">Username must be between 7 and 20 characters long and must not include scecial characters and symbols such as `!@#$%^&*()_+</div>
+                <div ng-message="pattern">Username must be between 7 and 20 characters long and must not include scecial characters and symbols such as `!@#$%^&*()_+</div>
                 <div ng-message="userAvailable">This user already exists</div>
             </div>
         </div>
