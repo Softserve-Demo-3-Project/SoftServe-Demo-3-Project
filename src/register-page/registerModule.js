@@ -28,7 +28,7 @@ export default angular
             .then(function ({
               data
             }) {
-              //username exists, this means validation success
+              // username exists, this means validation success
               if (data.length) {
                 throw new Error();
               }
@@ -37,7 +37,6 @@ export default angular
             .catch(function () {
               return $q.reject('selected username does not exists');
             })
-
         }
       }
     }
