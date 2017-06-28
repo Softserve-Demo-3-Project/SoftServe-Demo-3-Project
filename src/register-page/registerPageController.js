@@ -16,6 +16,7 @@ export default class registerPageController {
       password,
       confirmPassword
     } = user;
+    
     self.userService.register(name, age, email, username, password).then((res) => {
       self.userService.login(username, password).then(function (response) {
         let data = response.data;

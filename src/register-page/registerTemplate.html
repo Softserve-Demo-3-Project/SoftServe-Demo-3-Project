@@ -1,6 +1,6 @@
 <div class="container main-content">
 
-  <form class="registrationForm" 
+  <form class="registrationForm"
         name="registerForm" 
         ng-submit="register.onSubmit(register.user)" 
         novalidate="novalidate">
@@ -70,14 +70,14 @@
              required="" 
              placeholder="* Username"               
              ng-model="register.user.username"
-             ng-pattern="/^[A-Za-z0-9_]{7,20}$/" 
+             ng-pattern="/^[A-Za-z0-9_]{5,20}$/" 
              user-validator 
-             ng-model-options="{debounce : {'default' : 500}}"/>
+             ng-model-options="{ getterSetter : true, updateOn: 'default blur', debounce: { 'default': 300, 'blur': 0 } }"/>
 
-      <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched" style="color:red" role="alert">
-        <div ng-message="required">Username must be between 7 and 20 alphanumeric characters long</div>
-        <div ng-message="pattern">Username must be between 7 and 20 alphanumeric characters long</div>
+     <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched && !registerForm.$pristine" style="color:red" role="alert">
         <div ng-message="userAvailable">This user already exists</div>
+        <div ng-message="pattern">Username must be between 5 and 20 alphanumeric characters long</div>
+        <div ng-message="required">Username is required</div>
       </div>
     </div>
 
@@ -112,7 +112,7 @@
              ng-minlength="7"/>
 
       <div ng-show="register.user.confirmPassword.length > 0 && register.user.password !== register.user.confirmPassword" style="color:red" role="alert">Password missmatch</div>
-      <div ng-show="register.user.confirmPassword.length > 0 && register.user.password === register.user.confirmPassword" role="alert">Password match</div>
+      <div ng-show="register.user.confirmPassword.length > 0 && register.user.password === register.user.confirmPassword" style="color:green" role="alert">Password match</div>
 
       <div ng-messages="registerForm.confirmPassword.$error" ng-show="registerForm.confirmPassword.$touched" style="color:red" role="alert">
         <div ng-message="minlength">Your Password must be at least 7 characters long</div>
