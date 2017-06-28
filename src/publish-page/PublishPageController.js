@@ -27,7 +27,6 @@ export default class PublishPageController {
   loadAutoComplate(element) {
     let self = this;
     let inputFrom = document.getElementById('location');
-    let autocompleteFrom = new google.maps.places.Autocomplete(inputFrom);
 
     var options = {
       componentRestrictions: {
@@ -35,8 +34,9 @@ export default class PublishPageController {
       }
     };
 
+    let autocompleteFrom = new google.maps.places.Autocomplete(inputFrom, options);
 
-    google.maps.event.addListener(autocompleteFrom, options, 'place_changed', function () {
+    google.maps.event.addListener(autocompleteFrom, 'place_changed', function () {
       var place = autocompleteFrom.getPlace();
       self.user.locationLat = place.geometry.location.lat();
       self.user.locationLng = place.geometry.location.lng();

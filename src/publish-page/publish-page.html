@@ -1,4 +1,4 @@
-<div class="container containerPublishing" >
+<div class="container containerPublishing">
     <div class="row">
         <div class="col-lg-12">
             <div class="title text-center">Posting ads</div>
@@ -16,6 +16,7 @@
                                 placeholder="Enter a Title"
                                 ng-model="publish.user.title"
                                 ng-required="true">
+
 
                             <div class="error-messaging" ng-show="formPublishing.title.$touched && formPublishing.title.$invalid">
                                 <small class="error-messaging">Please, enter a Title!</small>
@@ -72,7 +73,8 @@
                                 type="text"
                                 class="form-control"
                                 id="location"
-                                ng-required="true">
+                                ng-required="true"
+                                placeholder="Enter your address">
 
                                 <input type="hidden" ng-model="publish.user.fromLat">
                                 <input type="hidden" ng-model="publish.user.fromLng">
