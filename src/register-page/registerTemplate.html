@@ -76,7 +76,7 @@
 
      <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched && !registerForm.$pristine" style="color:red" role="alert">
         <div ng-message="userAvailable">This user already exists</div>
-        <div ng-message="pattern">Username must be between 5 and 20 alphanumeric characters long</div>
+        <div ng-message="pattern">Username must be between 5 and 20 alphanumeric Latin characters long</div>
         <div ng-message="required">Username is required</div>
       </div>
     </div>
