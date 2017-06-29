@@ -9,7 +9,6 @@ export default class LoginController {
   init() {
     this.username = "";
     this.password = "";
-    this.rememberMe = false;
     this.hasFailed = false;
     this.hasLoggedIn = false;
   }
