@@ -4,7 +4,7 @@ import collapseContentDirective from './collapseContentDirective/collapseContent
 import collapseBodyDirective from './collapseBodyDirective/collapseBodyDirective.js';
 
 export default angular
-    .module('collapseContentModule', [])
-    .directive("collapseContent", collapseContentDirective)
-    .directive("collapseBody", collapseBodyDirective)
-    .name;
+  .module('collapseContentModule', [])
+  .directive("collapseContent", collapseContentDirective)
+  .directive("collapseBody", collapseBodyDirective)
+  .name;

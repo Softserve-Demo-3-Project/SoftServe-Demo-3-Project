@@ -8,8 +8,12 @@ export class adsService {
     var typeQuery = type;
     var priceQuery = price;
 
-    if (type && type !== 'all') {typeQuery = `type=${type}`;}
-    if (price) {priceQuery = `price=${price}`;}
+    if (type && type !== 'all') {
+      typeQuery = `type=${type}`;
+    }
+    if (price) {
+      priceQuery = `price=${price}`;
+    }
 
     return this.$http.get(`http://localhost:3000/ads?${typeQuery}&${priceQuery}`)
       .then((res) => res)

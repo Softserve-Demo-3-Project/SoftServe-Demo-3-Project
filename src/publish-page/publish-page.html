@@ -1,142 +1,101 @@
 <div class="container containerPublishing">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="title text-center">Posting ads</div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="title text-center">Posting ads</div>
 
-            <form name="formPublishing" ng-submit="publish.submit(formPublishing.$valid)">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label for="title">Title:</label>
-                              <input
-                                name="title"
-                                type="text"
-                                class="form-control"
-                                id="title"
-                                placeholder="Enter a Title"
-                                ng-model="publish.user.title"
-                                ng-required="true">
+      <form name="formPublishing" ng-submit="publish.submit(formPublishing.$valid)">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label for="title">Title:</label>
+              <input name="title" type="text" class="form-control" id="title" placeholder="Enter a Title" ng-model="publish.user.title"
+                ng-required="true">
 
 
-                            <div class="error-messaging" ng-show="formPublishing.title.$touched && formPublishing.title.$invalid">
-                                <small class="error-messaging">Please, enter a Title!</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="error-messaging" ng-show="formPublishing.title.$touched && formPublishing.title.$invalid">
+                <small class="error-messaging">Please, enter a Title!</small>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div>
-                            <div class="form-group">
-                                <label for="types">Types:</label>
-                                <select ng-model="publish.user.type" ng-required="true" class="form-control" id="types">
+        <div class="row">
+          <div class="col-lg-6">
+            <div>
+              <div class="form-group">
+                <label for="types">Types:</label>
+                <select ng-model="publish.user.type" ng-required="true" class="form-control" id="types">
                                         <option ng-repeat="option in publish.options" value="{{option.id}}">{{option.type}}</option>
                                 </select>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
 
-                    <div class="col-lg-6">
-                        <label for="button-forAttach">Attach picture:</label>
-                        <br>
-                        <label class="btn btn-primary btn-file">
+          <div class="col-lg-6">
+            <label for="button-forAttach">Attach picture:</label>
+            <br>
+            <label class="btn btn-primary btn-file">
                               Attach picture: <input file-model="publish.user.picture" type="file" style="display: none;" >
                         </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number:</label>
-                              <input
-                                name="telephone"
-                                type="tel"
-                                class="form-control"
-                                placeholder="Enter a phone number"
-                                id="phone"
-                                ng-model="publish.user.contacts"
-                                ng-required="true"
-                                ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im">
-
-                            <div class="error-messaging" ng-show="formPublishing.telephone.$touched && formPublishing.telephone.$invalid">
-                                <small class="error-messaging">Please, enter your phone number!</small>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="location">Address:</label>
-                              <input
-                                name="Address"
-                                type="text"
-                                class="form-control"
-                                id="location"
-                                ng-required="true"
-                                placeholder="Enter your address">
-
-                                <input type="hidden" ng-model="publish.user.fromLat">
-                                <input type="hidden" ng-model="publish.user.fromLng">
-                            <div class="error-messaging" ng-show="formPublishing.location.$touched && formPublishing.location.$invalid">
-                                <small class="error-messaging">Please, enter an address!</small>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="price">Price:</label>
-                              <input
-                                name="price"
-                                type="number"
-                                min="1"
-                                class="form-control"
-                                placeholder="Enter price in BGN"
-                                id="price"
-                                ng-model="publish.user.price"
-                                ng-required="true"
-                                ng-pattern="/^\s*(\+|-)?((\d+(\.\d\d)?)|(\.\d\d))\s*$/">
-
-
-                            <div class="error-messaging"
-                            ng-show="formPublishing.price.$touched && formPublishing.price.$invalid">
-                                <small class="error-messaging">Please, enter a price for your Ad!</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="description">Description:</label>
-                              <textarea
-                                name="description"
-                                class="form-control"
-                                rows="15"
-                                id="description"
-                                ng-required="true"
-                                ng-model="publish.user.description"
-                                ></textarea>
-
-
-                            <div class="error-messaging"
-                              ng-show="formPublishing.description.$touched && formPublishing.description.$invalid">
-                                  <small class="error-messaging">Please, enter a description text!</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-lg-6 col-lg-offset-6 text-right">
-                    <button
-                      class="btn btn-primary btn-lg"
-                      type="button"
-                      name="button"
-                      id="button-forSubmit"
-                      ng-click="publish.sendData(publish.user)"
-                      ng-disabled="formPublishing.$invalid">Submit</button>
-                  </div>
-                </div>
-            </form>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input name="telephone" type="tel" class="form-control" placeholder="Enter a phone number" id="phone" ng-model="publish.user.contacts"
+                ng-required="true" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im">
+
+              <div class="error-messaging" ng-show="formPublishing.telephone.$touched && formPublishing.telephone.$invalid">
+                <small class="error-messaging">Please, enter your phone number!</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Address:</label>
+              <input name="Address" type="text" class="form-control" id="location" ng-required="true" placeholder="Enter your address">
+
+              <input type="hidden" ng-model="publish.user.fromLat">
+              <input type="hidden" ng-model="publish.user.fromLng">
+              <div class="error-messaging" ng-show="formPublishing.location.$touched && formPublishing.location.$invalid">
+                <small class="error-messaging">Please, enter an address!</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input name="price" type="number" min="1" class="form-control" placeholder="Enter price in BGN" id="price" ng-model="publish.user.price"
+                ng-required="true" ng-pattern="/^\s*(\+|-)?((\d+(\.\d\d)?)|(\.\d\d))\s*$/">
+
+
+              <div class="error-messaging" ng-show="formPublishing.price.$touched && formPublishing.price.$invalid">
+                <small class="error-messaging">Please, enter a price for your Ad!</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea name="description" class="form-control" rows="15" id="description" ng-required="true" ng-model="publish.user.description"></textarea>
+
+
+              <div class="error-messaging" ng-show="formPublishing.description.$touched && formPublishing.description.$invalid">
+                <small class="error-messaging">Please, enter a description text!</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-lg-offset-6 text-right">
+            <button class="btn btn-primary btn-lg" type="button" name="button" id="button-forSubmit" ng-click="publish.sendData(publish.user)"
+              ng-disabled="formPublishing.$invalid">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
 </div>

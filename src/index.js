@@ -15,8 +15,12 @@ import registerModule from './register-page/registerModule';
 import publishModule from './publish-page/publishModule';
 import navigationDirective from './core/directive/navigation/navigationDirective';
 import mapLoadDirective from './core/directive/mapLoad/mapLoadDirective';
-import { UserService } from './core/services/user.service';
-import { AuthenticationService } from './core/services/authentication.service';
+import {
+  UserService
+} from './core/services/user.service';
+import {
+  AuthenticationService
+} from './core/services/authentication.service';
 
 angular
   .module('main', [
@@ -33,11 +37,7 @@ angular
   ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
-    // Remove "!" from url
     $locationProvider.hashPrefix('');
-
-    // Remove "#" from url ( may have some problems with server url and SEO )
-    // $locationProvider.html5Mode(true);
 
     $routeProvider
       .otherwise({
@@ -47,23 +47,23 @@ angular
   .directive("navigation", navigationDirective)
   .directive("mapLoad", mapLoadDirective)
   .run(['$rootScope', '$location', '$cookies', '$http',
-        function ($rootScope, $location, $cookies, $http) {
-            // keep user logged in after page refresh
-            $rootScope.globals = $cookies.getObject('globals') || {};
-            if ($rootScope.globals.currentUser) {
-                $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-            }
+    function ($rootScope, $location, $cookies, $http) {
+      $rootScope.globals = $cookies.getObject('globals') || {};
+      if ($rootScope.globals.currentUser) {
+        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+      }
 
-            $rootScope.$on('$locationChangeStart', function (event, next, current) {
-                // redirect to login page if not logged in and trying to access a restricted page
-                let pages = ['/login', '/register', '/home', 'publish'];
-                let restrictedPage = pages.indexOf($location.path()) === -1;
-                //TODO add restriction conditions for guests
-                let loggedIn = $rootScope.globals.currentUser;
-                if (!restrictedPage && loggedIn || restrictedPage && !loggedIn) { 
-                  $location.path('/home');
-                }
-            });
-        }])
+      $rootScope.$on('$locationChangeStart', function (event, next, current) {
+
+        let pages = ['/login', '/register', '/home', 'publish'];
+        let restrictedPage = pages.indexOf($location.path()) === -1;
+
+        let loggedIn = $rootScope.globals.currentUser;
+        if (!restrictedPage && loggedIn || restrictedPage && !loggedIn) {
+          $location.path('/home');
+        }
+      });
+    }
+  ])
 
 angular.bootstrap(document.documentElement, ['main']);

@@ -1,31 +1,31 @@
 <div class="panel-group" start-collapsed="true" role="tablist" allow-multiple="true" bs-collapse>
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-            <h4 class="panel-title">
-                <a ng-hide="editing" style="cursor: default; text-decoration: none;">{{ body.title }}</a>
-            </h4>
-            <hr/>
-            <img class="img" ng-src="{{ body.picture }}" alt="" width="auto" height="100">
-            <div ng-show="editing" class="input-group">
-                <input ng-model="body.title" type="text" class="form-control" />
-            </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary" ng-click="bodyToggle()" bs-collapse-toggle>{{ bodyShowned ? 'Show less' : 'Show more'  }}</button>
-                <button type="button" class="btn btn-primary" bs-dropdown data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    ng-show="isLoggedIn() === body.authorId">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab">
+      <h4 class="panel-title">
+        <a ng-hide="editing" style="cursor: default; text-decoration: none;">{{ body.title }}</a>
+      </h4>
+      <hr/>
+      <img class="img" ng-src="{{ body.picture }}" alt="" width="auto" height="100">
+      <div ng-show="editing" class="input-group">
+        <input ng-model="body.title" type="text" class="form-control" />
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" ng-click="bodyToggle()" bs-collapse-toggle>{{ bodyShowned ? 'Show less' : 'Show more'  }}</button>
+        <button type="button" class="btn btn-primary" bs-dropdown data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          ng-show="isLoggedIn() === body.authorId">
                     <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><button ng-click="editingToggle()">{{ editing ? 'Exit Edit' : 'Edit' }}</button></li>
-                    <li><button ng-click="onDelete({id: body.id})">Delete</button></li>
-                </ul>
-            </div>
-            <div class="panel-collapse" role="tabpanel" animation=".collapse" bs-collapse-target>
-                <div class="panel-body">
-                    <collapse-body ng-hide="editing" body="body"></collapse-body>
-                    <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit()"></edit-field>
-                </div>
-            </div>
+        <ul class="dropdown-menu" role="menu">
+          <li><button ng-click="editingToggle()">{{ editing ? 'Exit Edit' : 'Edit' }}</button></li>
+          <li><button ng-click="onDelete({id: body.id})">Delete</button></li>
+        </ul>
+      </div>
+      <div class="panel-collapse" role="tabpanel" animation=".collapse" bs-collapse-target>
+        <div class="panel-body">
+          <collapse-body ng-hide="editing" body="body"></collapse-body>
+          <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit()"></edit-field>
         </div>
+      </div>
     </div>
+  </div>
 </div>

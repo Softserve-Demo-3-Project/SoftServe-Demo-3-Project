@@ -17,10 +17,10 @@
              <option ng-repeat="type in home.types">{{type}}</option>
           </select>
 
-          <label for="price" >Price</label>
+          <label for="price">Price</label>
           <input type="text" id="price" class="form-control" ng-model="priceValue"></input>
 
-          <button ng-click="home.searchByType(typeValue, priceValue)" class="btn btn-primary btn-publishing top-20" >search</button>
+          <button ng-click="home.searchByType(typeValue, priceValue)" class="btn btn-primary btn-publishing top-20">search</button>
         </div>
       </div>
     </div>
@@ -47,9 +47,6 @@
 
   <div class="mapWrapper flexbox">
     <div id="mapHolder">
-
-      <!--<map ads="home.ads"></map>-->
-      <!--<map ng-if="home.ads.length > 0" ads="home.ads"></map>-->
 
       <div id="gmap"></div>
 

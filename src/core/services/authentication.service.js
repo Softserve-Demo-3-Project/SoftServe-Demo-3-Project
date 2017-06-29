@@ -18,10 +18,8 @@ export class AuthenticationService {
       }
     }
 
-    // set default auth header for http requests
     this.$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
-    // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
     var cookieExp = new Date();
     cookieExp.setDate(cookieExp.getDate() + 7);
     this.$cookies.putObject('globals', this.$rootScope.globals, {
@@ -85,7 +83,6 @@ class Base64 {
     var enc1, enc2, enc3, enc4 = "";
     var i = 0;
 
-    // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
     var base64test = /[^A-Za-z0-9\+\/\=]/g;
     if (base64test.exec(input)) {
       window.alert("There were invalid base64 characters in the input text.\n" +

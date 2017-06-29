@@ -28,7 +28,6 @@ export default angular
             .then(function ({
               data
             }) {
-              // username exists, this means validation success
               if (data.length) {
                 throw new Error();
               }

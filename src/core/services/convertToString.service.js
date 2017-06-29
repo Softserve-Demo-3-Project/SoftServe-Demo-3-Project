@@ -19,6 +19,8 @@ export class convertToString {
       });
     }
 
-    return { readAsURL };
+    return {
+      readAsURL
+    };
   }
 }
