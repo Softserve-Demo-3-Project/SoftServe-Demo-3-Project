@@ -4,7 +4,6 @@ export default function () {
         replace: true,
         restrict: "E",
         scope: {
-            header: "=",
             body: "=",
             alert: "=",
             isLoggedIn: "&",
