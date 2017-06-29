@@ -4,7 +4,7 @@ export default function () {
     scope: {
       body: "=",
       alert: "=",
-      onEdit: "="
+      onEdit: "&"
     },
     template: require('./editingFieldTemplate.html')
   }

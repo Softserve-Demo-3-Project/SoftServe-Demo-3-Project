@@ -23,7 +23,7 @@
             <div class="panel-collapse" role="tabpanel" animation=".collapse" bs-collapse-target>
                 <div class="panel-body">
                     <collapse-body ng-hide="editing" body="body"></collapse-body>
-                    <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit"></edit-field>
+                    <edit-field alert="alert" ng-show="editing" body="body" on-edit="onEdit()"></edit-field>
                 </div>
             </div>
         </div>

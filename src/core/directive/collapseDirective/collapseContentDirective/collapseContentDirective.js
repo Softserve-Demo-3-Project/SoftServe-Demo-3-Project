@@ -7,7 +7,7 @@ export default function () {
             body: "=",
             alert: "=",
             isLoggedIn: "&",
-            onEdit: "=",
+            onEdit: "&",
             onDelete: "&"
         },
         controller: function ($scope) {
