@@ -117,6 +117,14 @@
       "username": "toncho2",
       "password": "1111111",
       "id": 21
+    },
+    {
+      "name": "Petar Kolev",
+      "age": 27,
+      "email": "mail@mail.bg",
+      "username": "XxXtraSnuki",
+      "password": "11111111",
+      "id": 22
     }
   ],
   "ads": [
